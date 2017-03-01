@@ -1,6 +1,6 @@
 {
   "name": "phila-standards",
-  "version": "1.0.0",
+  "version": "0.2.3",
   "description": "City of Philadelphia Standards",
   "main": "src/js/main.js",
   "repository": "https://github.com/CityOfPhiladelphia/standards.git",
@@ -31,8 +31,8 @@
     "js:build": "browserify src/js/main.js -o dist/js/main.js",
     "js:watch": "watchify src/js/main.js -o dist/js/main.js",
     "//": "TODO use a cross-platform command",
-    "fonts": "cp -R node_modules/font-awesome/fonts dist/",
-    "build": "yarn run css:build && yarn run setup && yarn run js:build && yarn run fonts",
+    "assets": "cp -R node_modules/font-awesome/fonts dist/ && cp -R src/img dist/",
+    "build": "yarn run css:build && yarn run setup && yarn run js:build && yarn run assets",
     "prewatch": "yarn run build",
     "watch": "parallelshell 'yarn run css:watch' 'yarn run js:watch'",
     "start": "yarn run watch"
