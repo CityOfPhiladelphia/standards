@@ -1,0 +1,4 @@
+# Always publish dist/ and src/
+
+!dist/
+!src/
