@@ -1,6 +1,6 @@
 {
   "name": "phila-standards",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "City of Philadelphia Standards",
   "main": "dist/js/phila-standards.js",
   "repository": "https://github.com/CityOfPhiladelphia/standards.git",
