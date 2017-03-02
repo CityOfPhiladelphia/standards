@@ -1238,7 +1238,7 @@ form-data@~2.1.1:
     combined-stream "^1.0.5"
     mime-types "^2.1.12"
 
-foundation-sites@^6.3.0:
+foundation-sites@^6.3.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/foundation-sites/-/foundation-sites-6.3.1.tgz#23853372deb9480c13b426499eaf0c8f90cdbe1d"
   dependencies:
