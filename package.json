@@ -28,16 +28,16 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "setup": "mkdirp dist/js",
-    "css:build": "node-sass --include-path node_modules/foundation-sites/scss --include-path node_modules/font-awesome/scss --output-style compressed --source-map true src/sass/main.scss dist/css/styles.css",
-    "postcss:build": "postcss --use autoprefixer -b 'last 2 versions' -o dist/css/*.css dist/css/*.css",
+    "css:build": "node-sass --include-path node_modules/foundation-sites/scss --include-path node_modules/font-awesome/scss --output-style compressed --source-map true src/sass/main.scss dist/css/phila-standards.css",
     "css:watch": "onchange './src/sass/' -- yarn run css:build",
-    "js:build": "browserify src/js/main.js --debug | exorcist dist/js/bundle.map.js > dist/js/bundle.js",
-    "js:watch": "watchify src/js/main.js -o dist/js/bundle.js",
-    "//": "TODO use a cross-platform command",
+    "js:build": "browserify src/js/main.js --debug | exorcist dist/js/phila-standards.map.js > dist/js/phila-standards.js",
+    "js:watch": "watchify src/js/main.js -o dist/js/phila-standards.js",
     "assets": "cp -R node_modules/font-awesome/fonts dist/ && cp -R src/img dist/",
-    "build": "yarn run css:build && yarn run setup && yarn run js:build && yarn run assets",
+    "build": "yarn run setup && yarn run css:build && yarn run js:build && yarn run assets",
     "prewatch": "yarn run build",
     "watch": "parallelshell 'yarn run css:watch' 'yarn run js:watch'",
-    "start": "yarn run watch"
+    "start": "yarn run watch",
+    "prerelease": "yarn run clean",
+    "release": "yarn run build"
   }
 }
