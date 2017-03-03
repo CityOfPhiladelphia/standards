@@ -2,7 +2,7 @@
   "name": "phila-standards",
   "version": "0.2.8",
   "description": "City of Philadelphia Standards",
-  "main": "dist/js/phila-standards.js",
+  "main": "src/js/main.js",
   "repository": "https://github.com/CityOfPhiladelphia/standards.git",
   "author": "City of Philadelphia",
   "license": "GPL-3.0",
