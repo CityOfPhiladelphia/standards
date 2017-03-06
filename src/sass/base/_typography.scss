@@ -58,7 +58,11 @@ h3, .h3{
     @include breakpoint(medium) {
       padding: 0 $spacing-medium;
     }
-
+  }
+  h4 {
+    @include breakpoint(medium) {
+      margin-top: $spacing-medium;
+    }
   }
 }
 
