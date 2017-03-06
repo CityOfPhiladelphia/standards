@@ -23,6 +23,7 @@
     "postcss": "^5.2.10",
     "postcss-cli": "^2.6.0",
     "rimraf": "^2.6.1",
+    "uglifyjs": "^2.4.10",
     "watchify": "^3.8.0"
   },
   "scripts": {
