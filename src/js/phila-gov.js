@@ -1,15 +1,3 @@
-/*
-//department filter list
-new List('filter-list', {
-  valueNames: ['item', 'item-desc']
-});
-*/
-//provide function for preventing link follow-through
-/*function noLink(e){
-  e.preventDefault();
-}
-*/
-
 module.export = $(function(){
 
   /*Globals */
