@@ -50,13 +50,12 @@ module.export = $(function(){
     $('footer').toggle();
     $('footer').toggleClass('hide');
 
-
   }
-
 
   /* Drilldown menu */
   $(document).on('toggled.zf.responsiveToggle', '[data-responsive-toggle]', function(){
-    var mobileMenu = new Foundation.Drilldown( $('.mobile-nav-drilldown') );
+    var drilldownOptions = {dataAutoHeight: false, dataScrollTop: true};
+    var mobileMenu = new Foundation.Drilldown( $('.mobile-nav-drilldown'), drilldownOptions );
 
     if ( $( '.js-current-section' ).length === 0 ) {
       $('li.js-drilldown-back').after( '<li class="js-current-section" aria-hidden="false"></li>' );
@@ -80,8 +79,6 @@ module.export = $(function(){
       var aria = $(this).attr('aria-label');
       $(this).children('a').first().attr('aria-label', aria);
     });
-
-    drilldownMenuHeight();
 
     if($('.mobile-nav-drilldown').is(':visible')){
       togglePageBody(false);
@@ -293,8 +290,6 @@ module.export = $(function(){
       windowWidth = $(window).width();
 
       checkBrowserHeight( navHeight ) ;
-
-      drilldownMenuHeight();
 
       if (Foundation.MediaQuery.atLeast('medium')) {
         //$('.sticky:visible').foundation('_calc', true);
