@@ -26,86 +26,84 @@
       }
     }
   }
-  .department-nav {
-    #site-nav {
-      text-align: left;
-      @media screen and (min-width: 40em){
-        //background: none;
-        margin-bottom:0;
-        text-align: center;
-        //TODO: replace "department-menu" with more semantic "secondary-menu"
-        .department-menu,
-        .secondary-menu {
-          background: none;
-          .dropdown li{
+  #site-nav {
+    text-align: left;
+    @media screen and (min-width: 40em){
+      //background: none;
+      margin-bottom:0;
+      text-align: center;
+      //TODO: replace "department-menu" with more semantic "secondary-menu"
+      .department-menu,
+      .secondary-menu {
+        background: none;
+        .dropdown li{
+          border-bottom:2px solid color(white);
+          &:last-child{
             border-bottom:2px solid color(white);
-            &:last-child{
-              border-bottom:2px solid color(white);
-            }
           }
-          >li {
-            display: inline-block;
-            background-color: color(ben-franklin-blue);
-            &.is-right-arrow{
-              >a {
-                padding: $spacing-small $spacing-large;
-              }
-              > a::after{
-                content: '';
-                display: inline;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
-                border-top: 5px solid color(white);
-                border-bottom: none;
-                left: 5px;
-                position: relative;
-                margin: auto 0;
-                float: none;
-                top: 10px;
-                bottom: 0;
-              }
-             &.is-active,
-             &.current-menu-ancestor{
-               > a{
-                 background: color(dark-gray);
-                 color:color(white);
-                 &::after{
-                   border-top: none;
-                   border-bottom: 5px solid color(white);
-                   top: -10px;
-                 }
-                }
-              }
-            }
+        }
+        >li {
+          display: inline-block;
+          background-color: color(ben-franklin-blue);
+          &.is-right-arrow{
             >a {
-              color: color(white);
-              padding: $spacing-small $spacing-medium;
+              padding: $spacing-small $spacing-large;
+            }
+            > a::after{
+              content: '';
+              display: inline;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 5px solid color(white);
+              border-bottom: none;
+              left: 5px;
+              position: relative;
+              margin: auto 0;
+              float: none;
+              top: 10px;
+              bottom: 0;
+            }
+           &.is-active,
+           &.current-menu-ancestor{
+             > a{
+               background: color(dark-gray);
+               color:color(white);
+               &::after{
+                 border-top: none;
+                 border-bottom: 5px solid color(white);
+                 top: -10px;
+               }
+              }
             }
           }
-          a {
-            border:none;
+          >a {
+            color: color(white);
+            padding: $spacing-small $spacing-medium;
+          }
+        }
+        a {
+          border:none;
+          &:hover, &:active {
+            background: color(dark-gray);
+            color:color(white);
+          }
+        }
+        .is-dropdown-submenu {
+          top: auto;
+          left:0;
+          a{
+            background: color(ghost-gray);
+            color:color(ben-franklin-blue);
             &:hover, &:active {
               background: color(dark-gray);
               color:color(white);
             }
           }
-          .is-dropdown-submenu {
-            top: auto;
-            left:0;
-            a{
-              background: color(ghost-gray);
-              color:color(ben-franklin-blue);
-              &:hover, &:active {
-                background: color(dark-gray);
-                color:color(white);
-              }
-            }
-          }
-          .current-menu-item {
-            > a{
-              background: color(dark-gray);
-              color:color(white);
-            }
+        }
+        .current-menu-item {
+          > a{
+            background: color(dark-gray);
+            color:color(white);
           }
         }
       }
