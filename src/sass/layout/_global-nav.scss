@@ -134,9 +134,9 @@
     margin-top:-6px;
   }
 
-
   .is-drilldown {
     overflow: visible;
+    max-width: 100% !important;
 
     ul {
       background: color(ghost-gray);
