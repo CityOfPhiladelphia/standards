@@ -504,3 +504,41 @@ input[type=radio] {
     letter-spacing: .05px;
   }
 }
+
+.search {
+  width: 100%;
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.8rem;
+    height: 2.8rem;
+    font-family: 'FontAwesome';
+    content: '\f002';
+    text-align: center;
+    background: color(dark-ben-franklin);
+    color: color(white);
+    font-weight: normal;
+    padding: .57143rem;
+  }
+
+  .search-field,
+  input[type="text"]:focus,{
+    border:2px solid color(dark-ben-franklin);
+    background: color(white);
+  }
+  input[type="text"]{
+    background: color(white);
+  }
+  input[type="submit"] {
+    z-index:10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.8rem;
+    height: 2.8rem;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
