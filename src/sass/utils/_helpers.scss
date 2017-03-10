@@ -2,28 +2,6 @@ ul.inline-list li{
   display: inline-block;
 }
 
-.no-scroll{
-  height:100%;
-  overflow: hidden;
-}
-
-.no-scale{
-  width:auto;
-  height:auto;
-}
-
-.no-margin{
-  margin:0 !important;
-}
-
-.no-padding {
-  padding:0!important;
-}
-
-.nowrap {
-  white-space: nowrap!important;
-}
-
 .valign {
   display: table;
   width: 100%;
@@ -58,4 +36,27 @@ ul.inline-list li{
 }
 .title-bar{
   display: none;
+}
+
+/*NOOOOOOO*/
+.no-scroll{
+  height:100%;
+  overflow: hidden;
+}
+
+.no-scale{
+  width:auto;
+  height:auto;
+}
+
+.no-margin{
+  margin:0 !important;
+}
+
+.no-padding {
+  padding:0!important;
+}
+
+.nowrap {
+  white-space: nowrap!important;
 }
