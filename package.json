@@ -1,6 +1,6 @@
 {
   "name": "phila-standards",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "City of Philadelphia Standards",
   "main": "src/js/main.js",
   "repository": "https://github.com/CityOfPhiladelphia/standards.git",
@@ -31,13 +31,13 @@
     "assets": "cp -R node_modules/font-awesome/fonts dist/ && cp -R src/img dist/",
     "build:css": "node-sass --include-path node_modules/foundation-sites/scss --include-path node_modules/font-awesome/scss --output-style compressed --source-map true src/sass/phila-standards.scss dist/css/phila-standards.css",
     "build:js": "browserify src/js/main.js | uglifyjs -mc > dist/js/phila-standards.min.js",
-    "build": "yarn run setup && yarn run assets && yarn run build:css && yarn run build:js",
+    "build": "yarn setup && yarn assets && yarn build:css && yarn build:js",
     "postbuild": "postcss --use autoprefixer -b 'last 2 versions' < dist/css/phila-standards.css -o dist/css/phila-standards.css",
     "watch:css": "yarn build:css && yarn build:css -- -w",
     "watch:js": "watchify src/js/main.js -o dist/js/phila-standards.js -v",
-    "watch": "parallelshell 'yarn run watch:css' 'yarn run watch:js'",
-    "start": "yarn run watch",
-    "prerelease": "yarn run clean",
-    "release": "yarn run build"
+    "watch": "parallelshell 'yarn watch:css' 'yarn watch:js'",
+    "start": "yarn watch",
+    "prerelease": "yarn clean",
+    "release": "yarn build"
   }
 }
