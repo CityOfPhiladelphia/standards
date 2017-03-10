@@ -524,6 +524,8 @@ input[type=radio] {
   }
 
   .search-field,
+  min-height: 2.8rem;
+  
   input[type="text"]:focus,{
     border:2px solid color(dark-ben-franklin);
     background: color(white);
