@@ -2202,6 +2202,16 @@ postcss@^5.0.0, postcss@^5.2.10, postcss@^5.2.15:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
+postscribe@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/postscribe/-/postscribe-2.0.8.tgz#5b7a53aad4b690b6c2f75818fcefe74490f410d5"
+  dependencies:
+    prescribe ">=1.1.2"
+
+prescribe@>=1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/prescribe/-/prescribe-1.1.2.tgz#da4e84a9e04be8c414e75698bf5736c8ad6f82f5"
+
 preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
