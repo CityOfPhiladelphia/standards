@@ -263,7 +263,6 @@ module.exports = $(function(){
 
   });
 
-
   $('.site-search-dropdown').on('hide.zf.dropdown', function() {
     $( '.site-search i' ).removeClass('fa-close').addClass('fa-search');
     $('.site-search span').text('Search');
@@ -391,24 +390,6 @@ module.exports = $(function(){
       $(this).html(' Expand + ');
     }
   });
-
-  /* Async loaded feedback forms */
-  $.fn.feedbackify = function( src ) {
-    postscribe('#form-container', '<script  type="text/javascript" src="' + src + '"><\/script>');
-    $('html,body').animate({
-        scrollTop: $('.feedback').position().top - $('header .is-stuck').height()
-      }, 700 );
-    return false;
-  };
-
-  $("footer .feedback").on('click', function(){
-    $(this).feedbackify('https://form.jotform.com/jsform/62765090493967');
-  });
-
-  $(".neighborhood-resources .feedback").on('click', function(){
-    $(this).feedbackify('https://form.jotform.com/jsform/62516788470970');
-  });
-
 
   //foundation equalizer rows
   //doesn't work with nested Equalizers, because a unique ID is required.
