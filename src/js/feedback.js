@@ -1,6 +1,9 @@
 module.exports = $(function(){
+  var postscribe = require('postscribe');
+
   /* Async loaded feedback forms */
   $.fn.feedbackify = function( src ) {
+
     postscribe('#form-container', '<script  type="text/javascript" src="' + src + '"><\/script>');
     $('html,body').animate({
         scrollTop: $('.feedback').position().top - $('header .is-stuck').height()
