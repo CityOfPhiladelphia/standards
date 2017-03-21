@@ -1,5 +1,5 @@
 //provide logo fallback for old browsers. Thanks https://css-tricks.com/a-complete-guide-to-svg-fallbacks/
-module.export = function svg(){
+module.exports = function svg(){
 
   function svgasimg() {
     return document.implementation.hasFeature(

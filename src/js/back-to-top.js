@@ -1,4 +1,4 @@
-module.export = $(function(){
+module.exports = $(function(){
   if ( $('#back-to-top').length ) {
     var scrollTrigger = 100, // px
       backToTop = function () {
@@ -9,7 +9,7 @@ module.export = $(function(){
           $('#back-to-top').removeClass('show');
         }
       };
-      
+
     backToTop();
 
     $(window).on('scroll', function () {

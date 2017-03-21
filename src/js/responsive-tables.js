@@ -1,4 +1,4 @@
-module.export = $(function(){
+module.exports = $(function(){
   //inspired by https://github.com/smasala/responsive-tables-js
 
   function titleLables( content ) {
