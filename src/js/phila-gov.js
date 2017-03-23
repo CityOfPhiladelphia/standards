@@ -340,46 +340,6 @@ module.exports = $(function(){
       $(this).removeClass('is-hover');
   });
 
-  //Homepage Feedback Form
-  $('[data-toggle="feedback"]').click(function() {
-    $('[data-type="feedback-form"] iframe').css( 'height', '');
-    var formOffset = $('[data-toggle="feedback"]').offset();
-    var stickyHeight = $('.sticky-container').outerHeight();
-    if ( $('#wpadminbar').length ){
-      var wpadminbarHeight = $('#wpadminbar').outerHeight();
-    } else {
-      var wpadminbarHeight = 0;
-    }
-    var formPosition = formOffset.top - ( stickyHeight + wpadminbarHeight );
-
-    $('[data-type="feedback-form"] iframe').attr('onload',"window.parent.scrollTo(0," + formPosition + ")");
-
-    if ( $('[data-type="feedback-indicator"]').hasClass('up') ){
-      $('[data-type="feedback-form"]').slideToggle( function(){
-        $('[data-type="feedback-indicator"]').removeClass('up');
-        $('[data-type="feedback-footer"]').toggle();
-      });
-    } else {
-      $('[data-type="feedback-form"]').slideToggle();
-      $('[data-type="feedback-indicator"]').addClass('up');
-      $('[data-type="feedback-footer"]').toggle();
-    }
-  });
-
-  //Beta tester form
-  if ( $('[data-type="data-beta-tester-form"]').length ){
-    var formOffset = $('[data-type="data-beta-tester-form"]').offset();
-    var stickyHeight = $('.sticky-container').outerHeight();
-    if ( $('#wpadminbar').length ){
-      var wpadminbarHeight = $('#wpadminbar').outerHeight();
-    } else {
-      var wpadminbarHeight = 0;
-    }
-    var formPosition = formOffset.top - ( stickyHeight + wpadminbarHeight );
-
-    $('[data-type="data-beta-tester-form"] iframe').attr('onload',"window.parent.scrollTo(0," + formPosition + ")");
-  }
-
   // Staff summary expand
   $('[data-toggle="data-staff-bio"]').click(function(e){
     e.preventDefault();
