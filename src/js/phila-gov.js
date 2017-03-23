@@ -143,7 +143,6 @@ module.exports = $(function(){
 
 
   function resetLayout(){
-    togglePageBody( true );
     $('.menu-icon i').addClass('fa-bars').removeClass('fa-close');
     $('.menu-icon .title-bar-title').text('Menu');
     $('.menu-icon').removeClass('active');
@@ -151,10 +150,7 @@ module.exports = $(function(){
     $('#services-mega-menu').foundation('close');
 
     $('body').removeClass('no-scroll');
-
-    if ( $('.is-drilldown').is(':visible') ) {
-      $('.title-bar').foundation('toggleMenu');
-    }
+    toggleMenu();
   }
 
 
@@ -173,12 +169,16 @@ module.exports = $(function(){
       //on escape, also remove no-scroll
       if (e.keyCode == 27) {
         $('body').removeClass('no-scroll');
-        if ( $('.is-drilldown').is(':visible') ) {
-          $('.title-bar').foundation('toggleMenu');
-          togglePageBody(true);
-        }
+        menuToggle();
       }
     });
+  }
+
+  function menuToggle(){
+    if ( $('.is-drilldown').is(':visible') ) {
+      $('.title-bar').foundation('toggleMenu');
+      togglePageBody(true);
+    }
   }
 
   function checkBrowserHeight( navHeight ){
@@ -242,12 +242,7 @@ module.exports = $(function(){
   /* Site search dropdown */
 
   $('.site-search-dropdown').on('show.zf.dropdown', function(){
-    if ( $('.is-drilldown').is(':visible') ) {
-
-      $('.title-bar').foundation('toggleMenu');
-      togglePageBody(true);
-
-    }
+    menuToggle();
 
     $( '.site-search i' ).addClass('fa-close').removeClass('fa-search');
 
