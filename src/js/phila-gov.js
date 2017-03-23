@@ -14,16 +14,6 @@ module.exports = $(function(){
 
   var translate = setTimeout(function() { $('#google_translate_element a').prepend('<i class="fa fa-globe"></i>'); }, 1000);
 
-  $( $( '.global-nav a' ) ).each( function() {
-    if ( currentPath == $( this ).attr('href') || currentPath == $( this ).data( 'link' ) ){
-
-      $(this).addClass('js-is-current');
-      //special handling for services
-    }else if( currentPath.indexOf('/services/') === 0 ){
-      $('.services-menu-link a').addClass('js-is-current');
-    }
-  });
-
   /* Provide option for explict show/hide declarations, with jQuery fallbacks for older (ios) browsers */
   function togglePageBody( show ){
     if( show === true ){
@@ -143,7 +133,6 @@ module.exports = $(function(){
 
 
   function resetLayout(){
-    togglePageBody( true );
     $('.menu-icon i').addClass('fa-bars').removeClass('fa-close');
     $('.menu-icon .title-bar-title').text('Menu');
     $('.menu-icon').removeClass('active');
@@ -151,10 +140,7 @@ module.exports = $(function(){
     $('#services-mega-menu').foundation('close');
 
     $('body').removeClass('no-scroll');
-
-    if ( $('.is-drilldown').is(':visible') ) {
-      $('.title-bar').foundation('toggleMenu');
-    }
+    toggleMenu();
   }
 
 
@@ -173,12 +159,16 @@ module.exports = $(function(){
       //on escape, also remove no-scroll
       if (e.keyCode == 27) {
         $('body').removeClass('no-scroll');
-        if ( $('.is-drilldown').is(':visible') ) {
-          $('.title-bar').foundation('toggleMenu');
-          togglePageBody(true);
-        }
+        menuToggle();
       }
     });
+  }
+
+  function menuToggle(){
+    if ( $('.is-drilldown').is(':visible') ) {
+      $('.title-bar').foundation('toggleMenu');
+      togglePageBody(true);
+    }
   }
 
   function checkBrowserHeight( navHeight ){
@@ -242,12 +232,7 @@ module.exports = $(function(){
   /* Site search dropdown */
 
   $('.site-search-dropdown').on('show.zf.dropdown', function(){
-    if ( $('.is-drilldown').is(':visible') ) {
-
-      $('.title-bar').foundation('toggleMenu');
-      togglePageBody(true);
-
-    }
+    menuToggle();
 
     $( '.site-search i' ).addClass('fa-close').removeClass('fa-search');
 
@@ -339,46 +324,6 @@ module.exports = $(function(){
     function(){
       $(this).removeClass('is-hover');
   });
-
-  //Homepage Feedback Form
-  $('[data-toggle="feedback"]').click(function() {
-    $('[data-type="feedback-form"] iframe').css( 'height', '');
-    var formOffset = $('[data-toggle="feedback"]').offset();
-    var stickyHeight = $('.sticky-container').outerHeight();
-    if ( $('#wpadminbar').length ){
-      var wpadminbarHeight = $('#wpadminbar').outerHeight();
-    } else {
-      var wpadminbarHeight = 0;
-    }
-    var formPosition = formOffset.top - ( stickyHeight + wpadminbarHeight );
-
-    $('[data-type="feedback-form"] iframe').attr('onload',"window.parent.scrollTo(0," + formPosition + ")");
-
-    if ( $('[data-type="feedback-indicator"]').hasClass('up') ){
-      $('[data-type="feedback-form"]').slideToggle( function(){
-        $('[data-type="feedback-indicator"]').removeClass('up');
-        $('[data-type="feedback-footer"]').toggle();
-      });
-    } else {
-      $('[data-type="feedback-form"]').slideToggle();
-      $('[data-type="feedback-indicator"]').addClass('up');
-      $('[data-type="feedback-footer"]').toggle();
-    }
-  });
-
-  //Beta tester form
-  if ( $('[data-type="data-beta-tester-form"]').length ){
-    var formOffset = $('[data-type="data-beta-tester-form"]').offset();
-    var stickyHeight = $('.sticky-container').outerHeight();
-    if ( $('#wpadminbar').length ){
-      var wpadminbarHeight = $('#wpadminbar').outerHeight();
-    } else {
-      var wpadminbarHeight = 0;
-    }
-    var formPosition = formOffset.top - ( stickyHeight + wpadminbarHeight );
-
-    $('[data-type="data-beta-tester-form"] iframe').attr('onload',"window.parent.scrollTo(0," + formPosition + ")");
-  }
 
   // Staff summary expand
   $('[data-toggle="data-staff-bio"]').click(function(e){
