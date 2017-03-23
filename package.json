@@ -3,6 +3,7 @@
   "version": "0.3.5",
   "description": "City of Philadelphia Standards",
   "main": "src/js/main.js",
+  "style": "dist/css/phila-standards.css",
   "repository": "https://github.com/CityOfPhiladelphia/standards.git",
   "author": "City of Philadelphia",
   "license": "GPL-3.0",
