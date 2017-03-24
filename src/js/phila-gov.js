@@ -56,7 +56,7 @@ module.exports = $(function(){
         $(this).attr('tabindex', '0');
     });
 
-    $('.menu-icon .title-bar-title').text( ( $('.menu-icon .title-bar-title' ).text() == 'Menu' ) ? 'Close' : 'Menu' );
+    $('.menu-icon .title-bar-title').text( ( $('.menu-icon .title-bar-title' ).text() === 'Menu' ) ? 'Close' : 'Menu' );
 
     $('.global-nav .menu-icon').toggleClass('active');
 
@@ -157,7 +157,7 @@ module.exports = $(function(){
 
     $(document).keyup(function(e) {
       //on escape, also remove no-scroll
-      if (e.keyCode == 27) {
+      if (e.keyCode === 27) {
         $('body').removeClass('no-scroll');
         menuToggle();
       }
@@ -236,7 +236,7 @@ module.exports = $(function(){
 
     $( '.site-search i' ).addClass('fa-close').removeClass('fa-search');
 
-    $('.site-search span').text( ( $('.site-search span' ).text() == 'Search' ) ? 'Close' : 'Search' );
+    $('.site-search span').text( ( $('.site-search span' ).text() === 'Search' ) ? 'Close' : 'Search' );
 
     $('body').addClass('no-scroll');
 
@@ -255,7 +255,7 @@ module.exports = $(function(){
 
 
   function drilldownMenuHeight(){
-    if (Foundation.MediaQuery.current == 'small') {
+    if (Foundation.MediaQuery.current === 'small') {
       var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
       var drilldownHeight = $('.global-nav .is-drilldown').outerHeight();
@@ -270,7 +270,7 @@ module.exports = $(function(){
   $( window ).resize(function() {
 
     //check window width for mobile devices to prevent window resize on scroll.
-    if ($(window).width() != windowWidth) {
+    if ($(window).width() !== windowWidth) {
       windowWidth = $(window).width();
 
       checkBrowserHeight( navHeight ) ;
@@ -295,7 +295,7 @@ module.exports = $(function(){
   /* prevent search dropdown from becoming dissconnected from header when keyboard is closed on iOS devices */
 
   $('.search-field').focusout(function() {
-    if ( Foundation.MediaQuery.current == 'small' ) {
+    if ( Foundation.MediaQuery.current === 'small' ) {
       window.scrollTo(0, 0);
     }
   });
@@ -307,7 +307,7 @@ module.exports = $(function(){
   //prevent enter from refreshing the page and stopping filter search
 
   $('#filter-list input').keypress(function(event){
-    if(event.keyCode == 13) {
+    if(event.keyCode === 13) {
       event.preventDefault();
       return false;
     }
