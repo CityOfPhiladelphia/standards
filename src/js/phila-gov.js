@@ -145,12 +145,7 @@ module.exports = $(function(){
 
 
   function resetScroll(){
-    $('#page').click( function() {
-      $('body').removeClass('no-scroll');
-      $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
-    });
-
-    $('footer').click( function() {
+    $('#page, footer').click( function() {
       $('body').removeClass('no-scroll');
       $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
     });
