@@ -133,21 +133,26 @@ module.exports = $(function(){
 
 
   function resetLayout(){
-    $('.menu-icon i').addClass('fa-bars').removeClass('fa-close');
     $('.menu-icon .title-bar-title').text('Menu');
     $('.menu-icon').removeClass('active');
 
     $('#services-mega-menu').foundation('close');
 
+    resetTopBar();
+
+  }
+
+  function resetTopBar(){
     $('body').removeClass('no-scroll');
-    toggleMenu();
+    $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
+    $('.menu-icon i').addClass('fa-bars').removeClass('fa-close');
+
   }
 
 
   function resetScroll(){
     $('#page, footer').click( function() {
-      $('body').removeClass('no-scroll');
-      $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
+      resetTopBar();
     });
 
     $(document).keyup(function(e) {
