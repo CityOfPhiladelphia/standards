@@ -60,3 +60,9 @@ ul.inline-list li{
 .nowrap {
   white-space: nowrap!important;
 }
+
+.accessible,
+a.skip-link,
+.screen-reader-text {
+  @extend %accessible;
+}
