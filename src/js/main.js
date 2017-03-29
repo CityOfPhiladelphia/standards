@@ -1,4 +1,6 @@
-require('foundation-sites');
+var $ = require('jquery');
+var foundation = require('foundation');
+
 require('./feedback');
 require('./feedback-toggle');
 require('./back-to-top');
