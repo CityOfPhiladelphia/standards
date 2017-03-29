@@ -1,5 +1,5 @@
 var $ = require('jquery');
-var foundation = require('foundation');
+var foundation = require('foundation-sites');
 
 require('./feedback');
 require('./feedback-toggle');
