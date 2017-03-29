@@ -42,5 +42,21 @@
     "start": "yarn watch",
     "prerelease": "yarn clean",
     "release": "yarn build"
+  },
+  "peerDependencies": {
+    "jquery": "^3.2.1"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "foundation": "./node_modules/foundation-sites/dist/js/foundation.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "foundation": "foundation"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   }
 }
