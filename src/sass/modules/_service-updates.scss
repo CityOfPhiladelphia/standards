@@ -18,6 +18,9 @@
     > div {
       > div {
         background: color(light-red);
+        &.details{
+          background: transparentize( color(light-red), 0.5);
+        }
       }
     }
   }
@@ -25,6 +28,9 @@
     > div {
       > div {
         background: color(light-bell);
+        &.details{
+          background: transparentize( color(light-bell), 0.5) !important;
+        }
       }
     }
   }
@@ -34,6 +40,9 @@
     }
     > div {
       background: color(light-kelly-drive);
+      &.details{
+        background: transparentize( color(light-kelly-drive), 0.5);
+      }
     }
   }
   .icon {
