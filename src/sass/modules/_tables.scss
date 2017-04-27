@@ -19,3 +19,7 @@
     }
   }
 }
+
+table td:empty {
+  display: none;
+}
