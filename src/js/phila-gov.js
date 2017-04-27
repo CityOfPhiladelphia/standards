@@ -72,7 +72,6 @@ module.exports = $(function(){
 
     if($('.mobile-nav-drilldown').is(':visible')){
       togglePageBody(false);
-
     }else{
       togglePageBody(true);
     }
@@ -139,29 +138,12 @@ module.exports = $(function(){
     $('#services-mega-menu').foundation('close');
 
     resetTopBar();
-
   }
 
   function resetTopBar(){
     $('body').removeClass('no-scroll');
     $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
     $('.menu-icon i').addClass('fa-bars').removeClass('fa-close');
-
-  }
-
-
-  function resetScroll(){
-    $('#page, footer').click( function() {
-      resetTopBar();
-    });
-
-    $(document).keyup(function(e) {
-      //on escape, also remove no-scroll
-      if (e.keyCode === 27) {
-        $('body').removeClass('no-scroll');
-        menuToggle();
-      }
-    });
   }
 
   function menuToggle(){
@@ -215,14 +197,12 @@ module.exports = $(function(){
 
 
   //click and hover handler for desktop service menu link
-
   $('.services-menu-link').on('click mouseover', function () {
     $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
   });
 
 
   /* All dropdowns */
-
   $(document).on('hide.zf.dropdown', '[data-dropdown]', function() {
     togglePageBody( true );
     $('body').removeClass('no-scroll');
@@ -230,10 +210,8 @@ module.exports = $(function(){
 
 
   /* Site search dropdown */
-
   $('.site-search-dropdown').on('show.zf.dropdown', function(){
     menuToggle();
-
     $( '.site-search i' ).addClass('fa-close').removeClass('fa-search');
 
     $('.site-search span').text( ( $('.site-search span' ).text() === 'Search' ) ? 'Close' : 'Search' );
@@ -266,7 +244,6 @@ module.exports = $(function(){
     }
   }
 
-
   $( window ).resize(function() {
 
     //check window width for mobile devices to prevent window resize on scroll.
@@ -276,19 +253,15 @@ module.exports = $(function(){
       checkBrowserHeight( navHeight ) ;
 
       if (Foundation.MediaQuery.atLeast('medium')) {
-        //$('.sticky:visible').foundation('_calc', true);
         resetLayout();
       }
     }
     $(window).bind('orientationchange', function(e){
-
       resetLayout();
-
     });
 
     //orientation doesn't matter, always remove the no-scroll class
     $('body').removeClass('no-scroll');
-
   });
 
 
@@ -299,20 +272,6 @@ module.exports = $(function(){
       window.scrollTo(0, 0);
     }
   });
-
-
-
-  resetScroll();
-
-  //prevent enter from refreshing the page and stopping filter search
-
-  $('#filter-list input').keypress(function(event){
-    if(event.keyCode === 13) {
-      event.preventDefault();
-      return false;
-    }
-  });
-
 
   $('.clickable-row').click(function() {
     window.location = $(this).data('href');
