@@ -1,11 +1,14 @@
-//TODO: refacor this
 // v2 hero content
 .hero-content {
   margin-top:0;
   font-family: 'Montserrat', 'Tahoma', sans-serif;
   text-align: center;
 
-  @media only screen and (min-width: 40em) {
+  @include breakpoint(small only) {
+    background-image: none !important;
+  }
+
+  @include breakpoint(medium up) {
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -13,7 +16,7 @@
     h1 {
       font-size: 2.5rem;
       line-height: 1;
-      @media only screen and (min-width: 40em) {
+      @include breakpoint(medium up) {
         font-size: 3.5rem;
       }
     }
@@ -21,15 +24,14 @@
       font-size: 1rem;
       line-height: 1.25;
 
-      @media only screen and (min-width: 40em) {
+      @include breakpoint(medium up) {
         font-size: 1.25rem;
       }
     }
   }
   #site-nav {
     text-align: left;
-    @media screen and (min-width: 40em){
-      //background: none;
+    @include breakpoint(medium up) {
       margin-bottom:0;
       text-align: center;
       //TODO: replace "department-menu" with more semantic "secondary-menu"
@@ -121,7 +123,7 @@
     .h1 {
       font-size: 2.5rem;
       line-height: 1;
-      @media only screen and (min-width: 40em) {
+      @include breakpoint(medium up) {
         font-size: 3.5rem;
       }
     }
@@ -129,7 +131,7 @@
       font-size: 1.5rem;
       line-height: 1.25;
 
-      @media only screen and (min-width: 40em) {
+      @include breakpoint(medium up) {
         font-size: 2rem;
       }
     }
@@ -148,7 +150,7 @@
   }
   .photo-credit.small-text {
     display:none;
-    @media only screen and (min-width: 64em) {
+    @include breakpoint(medium up) {
       display:inline-block;
       font-style: italic;
       font-size: .75rem;
@@ -157,112 +159,6 @@
       position: absolute;
       bottom: 105px;
       right: 0;
-    }
-  }
-}
-
-// v1 department hero content
-.hero-measureline {
-    position: absolute;
-    white-space: nowrap;
-    visibility: hidden;
-    line-height: 1;
-    letter-spacing: .03rem;
-    font-family: 'Montserrat', 'Tahoma', sans-serif;
-    font-size: 2rem;
-}
-.hero-measureline {
-  &.emphasis {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-  }
-}
-
-.hero-header {
-  position: relative;
-  overflow:hidden;
-  margin: 0 0 $spacing-medium 0;
-    .intro{
-      position: relative;
-      a {
-        &:hover {
-          color:#a1a1a1;
-        }
-        &:not(.button) {
-          color: #fff;
-          text-decoration: underline;
-        }
-      }
-    }
-    .photo-credit {
-      padding: $spacing-extra-small 0;
-      font-style: italic;
-      // background-color: rgba(0,0,0,.3);
-    }
-    #header-image {
-      width:100%;
-    }
-    @media screen and (min-width: 40em) {
-      .intro {
-        position: absolute;
-        bottom: 1.5rem;
-        left:$spacing-large;
-        color: #fff;
-        background: rgba(33,118,210,.9);
-        width: 400px;
-        padding: 0 $spacing-medium;;
-        h1 {
-          display: inline-block;
-          font-size: 2.5rem;
-          line-height: 3rem;
-          margin:$spacing-small 0;
-          padding: $spacing-small 0;
-          .strong {
-            font-size: 3.5rem;
-            white-space: pre;
-            text-transform: uppercase;
-          }
-          .break-after {
-            &:after {
-              content: '\A';
-            }
-          }
-          .break-before {
-            &:before {
-              content: '\A';
-            }
-          }
-          .emphasis {
-            text-transform: uppercase;
-          }
-          .hero-tagline {
-            line-height: 1;
-            font-size: 2rem;
-          }
-          .hero-tagline {
-            &.emphasis {
-              font-size: 3.5rem;
-            }
-          }
-        }
-        //TODO: Find out if .sub-head is still used
-        .sub-head {
-          font-weight:700;
-          font-size: 1rem;
-          font-family: 'Montserrat', 'Tahoma', sans-serif;
-        }
-        p {
-          font-weight: bold;
-        }
-      }
-      .photo-credit {
-        color: color(white);
-        padding: $spacing-extra-small $spacing-small;
-        position:absolute;
-        bottom:0;
-        right:0;
-        text-shadow: 1px 1px 1px color(dark-gray);
-        // background-color: rgba(0,0,0,.3);
     }
   }
 }
