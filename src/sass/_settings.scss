@@ -140,7 +140,7 @@ $code-font-weight: $global-weight-normal;
 $code-background: color(ghost-gray);
 $code-border: none;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: color(ben-franklin-blue);
+$anchor-color: color(dark-ben-franklin);
 $anchor-color-hover: color(dark-gray);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
@@ -322,9 +322,9 @@ $closebutton-color-hover: color(black);
 
 $drilldown-transition: transform 0.15s linear;
 $drilldown-arrows: true;
-$drilldown-arrow-color: $primary-color;
+$drilldown-arrow-color: color(dark-ben-franklin);
 $drilldown-arrow-size: 6px;
-$drilldown-background: color(white);
+$drilldown-background: color(ghost-gray);
 
 // 17. Dropdown
 // ------------
@@ -627,8 +627,8 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0;
-$topbar-background: transparent;
-$topbar-submenu-background: $topbar-background;
+$topbar-background: color(ghost-gray);
+$topbar-submenu-background: color(ghost-gray);
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: auto;
 $topbar-unstack-breakpoint: medium;

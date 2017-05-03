@@ -1,4 +1,8 @@
-//TODO: refacor this file
+#mobile-nav{
+  padding-right:0;
+  padding-left:0;
+}
+
 .global-nav {
   @include secondary-font(400);
   position: relative;
@@ -11,10 +15,10 @@
 
   .js-is-current {
     color:color(white);
-    background: color(ben-franklin-blue);
+    background: color(dark-ben-franklin);
     &:hover,
     &:active{
-      color:color(ben-franklin-blue);
+      color:color(dark-ben-franklin);
       background: color(light-blue);
     }
   }
@@ -29,8 +33,6 @@
     }
   }
   //utility nav
-  //TODO: deprecate .secondary-nav in this location.
-  .secondary-nav,
   .utility-nav {
     font-size: .85rem;
 
@@ -82,13 +84,18 @@
     max-width: 100% !important;
     left:0 !important;
 
+    @include breakpoint(small only) {
+      top: 0 !important;
+    }
+
     &.is-stuck{
       box-shadow: 0 3px 10px rgba(color(medium-gray), .5);
     }
 
-    @include breakpoint(small only) {
-      position: relative;
-      z-index: auto;
+    .sticky-header-width{
+      max-width: 75rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
   }
@@ -96,7 +103,6 @@
   .title-bar {
     color:color(dark-ben-franklin);
     position: absolute;
-    z-index: 10;
 
     .menu-icon {
       position: relative;
@@ -114,7 +120,7 @@
       }
 
       &:after, &:before {
-        background: color(ben-franklin-blue);
+        background: color(dark-ben-franklin);
         box-shadow: none;
         height: 0;
       }
@@ -130,21 +136,10 @@
     }
   }
 
-  .is-drilldown-submenu-parent a::after {
-    margin-top:-6px;
-  }
-
   .is-drilldown {
-    overflow: visible;
     max-width: 100% !important;
 
     ul {
-      background: color(ghost-gray);
-      width: 100%;
-      height: inherit;
-      margin: 0;
-      padding:0;
-      bottom:0;
 
       li {
         background: color(ghost-gray);
@@ -160,14 +155,23 @@
         a{
           padding:1rem;
           display: block;
-
+          line-height: 1;
 
           &:hover,
           &:active {
-            background: color(ben-franklin-blue);
+            background: color(dark-ben-franklin);
             color:color(white);
           }
         }
+      }
+    }
+    .is-submenu-parent-item{
+      font-size: 1.3rem;
+      a:link, a:hover, a:active{
+        background:color(ghost-gray);
+        cursor: default;
+        color: color(black);
+
       }
     }
     .is-drilldown-submenu-parent > a {
@@ -183,6 +187,7 @@
       }
     }
 
+
     .js-drilldown-back{
       >a:hover::before,
       >a:active::before{
@@ -196,20 +201,13 @@
     }
 
     .top-bar{
-      background-color: color(ghost-gray);
-      position: absolute;
-      z-index:11;
-      //overflow: scroll;
-      //height:200px;
-      //TODO: calcuate this w/ js
-      //top:83px;
+      background-color: color(white);
       &.no-js{
         display:none;
       }
     }
 
   }
-
 
   @include breakpoint( medium ) {
     .services-menu-link {
@@ -266,7 +264,7 @@
       }
        //this is to account for when the dropdown panel is visible AND when the normal :hover state is active
       &.hover {
-        background: color(ben-franklin-blue);
+        background: color(dark-ben-franklin);
 
         //panel is open
         a{
@@ -317,7 +315,7 @@
 
        &:hover::after,
        &:active::after{
-        border-color: color(ben-franklin-blue) transparent transparent transparent;
+        border-color: color(dark-ben-franklin) transparent transparent transparent;
 
        }
        &::after {
@@ -340,7 +338,7 @@
        }
         &.js-is-current {
           color:color(white);
-          background: color(ben-franklin-blue);
+          background: color(dark-ben-franklin);
 
           &::after{
             border-color: color(white) transparent transparent transparent;
@@ -386,7 +384,7 @@
 
         &:hover {
           color:color(white);
-          background: color(ben-franklin-blue);
+          background: color(dark-ben-franklin);
         }
         span{
           display:block;
@@ -400,7 +398,7 @@
         color: color(white);
         &:hover {
           background:color(white);
-          color:color(ben-franklin-blue);
+          color:color(dark-ben-franklin);
         }
       }
       .left-arrow-indent{
@@ -505,6 +503,19 @@ header {
       @include breakpoint(medium) {
         right: 1rem;
       }
+    }
+  }
+}
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
     }
   }
 }
