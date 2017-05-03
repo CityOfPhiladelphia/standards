@@ -105,7 +105,6 @@ module.exports = $(function(){
     if ( !$('.is-drilldown').is(':visible') ){
       $('#page').removeClass('hide');
       $('footer').removeClass('hide');
-      Foundation.reInit('Equalizer');
     }
   });
 
