@@ -51,7 +51,7 @@ module.exports = $(function(){
     $('footer').toggleClass('hide');
   }
 
-  function checkBrowserHeight( ){
+  function checkBrowserHeight(){
     if ( $('body').hasClass('logged-in') ) {
       return;
     }
@@ -112,7 +112,6 @@ module.exports = $(function(){
   /* Site search dropdown */
   $('.site-search-dropdown').on('show.zf.dropdown', function(){
     //menu toggle close when menu is already open
-
     if ( (Foundation.MediaQuery.current === 'small') && $('.is-drilldown').is(':visible') ){
       $('.title-bar').foundation('toggleMenu');
     }
@@ -124,6 +123,8 @@ module.exports = $(function(){
 
     if ( $('.sticky').hasClass('is-stuck') ){
       navHeight = $('.sticky-container').height();
+    }else{
+      navHeight = $('.global-nav').height();
     }
 
     $(this).css('top', navHeight);
@@ -138,8 +139,6 @@ module.exports = $(function(){
     //check window width for mobile devices to prevent window resize on scroll.
     if ($(window).width() !== windowWidth) {
       windowWidth = $(window).width();
-
-      //checkBrowserHeight( navHeight ) ;
 
       if (Foundation.MediaQuery.atLeast('medium')) {
         showBodyContent();
