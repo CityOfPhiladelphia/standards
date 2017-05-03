@@ -114,7 +114,6 @@ module.exports = $(function(){
     //menu toggle close when menu is already open
 
     if ( (Foundation.MediaQuery.current === 'small') && $('.is-drilldown').is(':visible') ){
-      console.log('fire');
       $('.title-bar').foundation('toggleMenu');
     }
     $( '.site-search i' ).addClass('fa-close').removeClass('fa-search');
