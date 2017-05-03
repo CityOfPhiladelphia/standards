@@ -103,12 +103,10 @@ module.exports = $(function(){
   $(document).on('hide.zf.dropdown', '[data-dropdown]', function() {
     $('body').removeClass('no-scroll');
     if ( !$('.is-drilldown').is(':visible') ){
-
       $('#page').removeClass('hide');
       $('footer').removeClass('hide');
+      Foundation.reInit('Equalizer');
     }
-    Foundation.reInit('Equalizer');
-
   });
 
 
