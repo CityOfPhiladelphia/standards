@@ -84,6 +84,10 @@
     max-width: 100% !important;
     left:0 !important;
 
+    @include breakpoint(small only) {
+      top: 0 !important;
+    }
+
     &.is-stuck{
       box-shadow: 0 3px 10px rgba(color(medium-gray), .5);
     }
