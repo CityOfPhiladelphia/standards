@@ -2,7 +2,6 @@ module.exports = $(function(){
 
   /*Globals */
   var navHeight = $('.global-nav').height();
-  var currentPath = window.location.pathname;
   var windowWidth = $(window).width();
 
   //Generic class for links that should prevent clickthrough
@@ -10,116 +9,30 @@ module.exports = $(function(){
     e.preventDefault();
   });
 
-  $('.top-bar').css( 'top', navHeight );
-
   var translate = setTimeout(function() { $('#google_translate_element a').prepend('<i class="fa fa-globe"></i>'); }, 1000);
 
-  /* Provide option for explict show/hide declarations, with jQuery fallbacks for older (ios) browsers */
-  function togglePageBody( show ){
-    if( show === true ){
-      $('#page').show();
-      $('#page').removeClass('hide');
-
-      $('footer').show();
-      $('footer').removeClass('hide');
-      return;
-    }
-
-    if( show === false ){
-
-      $('#page').hide();
-      $('#page').addClass('hide');
-
-      $('footer').hide();
-      $('footer').addClass('hide');
-      return;
-    }
-    $('#page').toggle();
-    $('#page').toggleClass('hide');
-
-    $('footer').toggle();
-    $('footer').toggleClass('hide');
-
-  }
+  var drilldownOptions = {
+    autoHeight: false,
+    scrollTop: true,
+    parentLink: true,
+    scrollTopElement: 'body'
+  };
+  var mobileMenu = new Foundation.Drilldown( $('#mobile-nav-drilldown'), drilldownOptions );
 
   /* Drilldown menu */
   $(document).on('toggled.zf.responsiveToggle', '[data-responsive-toggle]', function(){
-    var drilldownOptions = {dataAutoHeight: false, dataScrollTop: true};
-    var mobileMenu = new Foundation.Drilldown( $('.mobile-nav-drilldown'), drilldownOptions );
-
-    if ( $( '.js-current-section' ).length === 0 ) {
-      $('li.js-drilldown-back').after( '<li class="js-current-section" aria-hidden="false"></li>' );
-    }
-    $('li.js-drilldown-back').attr('tabindex', '1');
-
-    $('.mobile-nav-drilldown li').each( function() {
-        $(this).attr('tabindex', '0');
-    });
-
-    $('.menu-icon .title-bar-title').text( ( $('.menu-icon .title-bar-title' ).text() === 'Menu' ) ? 'Close' : 'Menu' );
-
-    $('.global-nav .menu-icon').toggleClass('active');
-
-    $('body').removeClass('no-scroll');
-
-    $('.menu-icon i').toggleClass('fa-bars').toggleClass('fa-close');
-
-    /* duplicate aria tags on drilldown parents, to allow full tap on item */
-    $('li.is-drilldown-submenu-parent').each(function() {
-      var aria = $(this).attr('aria-label');
-      $(this).children('a').first().attr('aria-label', aria);
-    });
-
-    if($('.mobile-nav-drilldown').is(':visible')){
-      togglePageBody(false);
-    }else{
-      togglePageBody(true);
-    }
+    extendMenuToggle();
   });
 
-  var parentLink = ['Main Menu'];
-
+  //opened submenu
   $(document).on('open.zf.drilldown', '[data-drilldown]', function(){
-
-    $('body').scrollTop('0');
-
-    parentLink.push( $(this).find('.is-active').last().prev().text() );
-
-    $(this).find('.is-active').last().addClass('current-parent');
-
-    $('.current-parent > li.js-drilldown-back a').text( 'Back to ' + parentLink.slice(-2)[0] );
-
-    $('.js-current-section').html( parentLink.slice(-1)[0] );
-
     /* Ensure no events get through on titles */
-    $('.js-current-section').each(function( ) {
+    $('.is-submenu-parent-item').each(function( ) {
       $(this).click(function(e) {
         return false;
       });
-
     });
-    //don't let events bubble up and cause issues on ul click
-    $( 'ul.is-active' ).click(function( e ) {
-      e.stopPropagation();
-    });
-
-    $(this).find('.is-active').attr('aria-hidden', 'false');
-
-    $(this).find('.is-drilldown-submenu').not('.is-active').attr('aria-hidden', 'true');
-
-
   });
-
-
-  $(document).on('hide.zf.drilldown', '[data-drilldown]', function(){
-    parentLink.pop();
-
-    $('.current-parent > li.js-drilldown-back a').text( 'Back to ' + parentLink.slice(-2)[0] );
-
-    $('.js-current-section').html( parentLink.slice(-1)[0] );
-
-  });
-
 
   $('#services-mega-menu').hover( function(){
     $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
@@ -130,30 +43,17 @@ module.exports = $(function(){
 
   });
 
+  function extendMenuToggle(){
+    $('.menu-icon i').toggleClass('fa-bars').toggleClass('fa-close');
+    $('.menu-icon .title-bar-title').text( ( $('.menu-icon .title-bar-title' ).text() === 'Menu' ) ? 'Close' : 'Menu' );
+    $('.global-nav .menu-icon').toggleClass('active');
+    $('#page').toggleClass('hide');
+    $('footer').toggleClass('hide');
 
-  function resetLayout(){
-    $('.menu-icon .title-bar-title').text('Menu');
-    $('.menu-icon').removeClass('active');
-
-    $('#services-mega-menu').foundation('close');
-
-    resetTopBar();
+    Foundation.reInit('Equalizer');
   }
 
-  function resetTopBar(){
-    $('body').removeClass('no-scroll');
-    $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
-    $('.menu-icon i').addClass('fa-bars').removeClass('fa-close');
-  }
-
-  function menuToggle(){
-    if ( $('.is-drilldown').is(':visible') ) {
-      $('.title-bar').foundation('toggleMenu');
-      togglePageBody(true);
-    }
-  }
-
-  function checkBrowserHeight( navHeight ){
+  function checkBrowserHeight( ){
     if ( $('body').hasClass('logged-in') ) {
       return;
     }
@@ -169,30 +69,29 @@ module.exports = $(function(){
     }
 
     if ( wh <= sh ) {
-      $('#services-mega-menu').css({
+      $('.mega-menu-dropdown').css({
         'position': 'absolute',
-        'top': 0
+        'top': '0'
       });
 
-      togglePageBody( false );
       $('body').removeClass('no-scroll');
+      $('#page').addClass('hide');
+      $('footer').addClass('hide');
 
     }else{
 
-      togglePageBody( true );
       $('body').addClass('no-scroll');
+      $('#page').removeClass('hide');
+      $('footer').removeClass('hide');
 
     }
 
   }
 
   /* Mega menu Dropdown */
-
   $('#services-mega-menu').on('show.zf.dropdown', function() {
-
     $('#back-to-top').css('display', 'none');
-
-    checkBrowserHeight( navHeight );
+    checkBrowserHeight();
   });
 
 
@@ -204,14 +103,23 @@ module.exports = $(function(){
 
   /* All dropdowns */
   $(document).on('hide.zf.dropdown', '[data-dropdown]', function() {
-    togglePageBody( true );
     $('body').removeClass('no-scroll');
+    if ( !$('.is-drilldown').is(':visible') ){
+
+      $('#page').removeClass('hide');
+      $('footer').removeClass('hide');
+    }
+    Foundation.reInit('Equalizer');
+
   });
 
 
   /* Site search dropdown */
   $('.site-search-dropdown').on('show.zf.dropdown', function(){
-    menuToggle();
+    //menu toggle close when menu is already open
+    if ( $('.is-drilldown').is(':visible') ){
+      $('.title-bar').foundation('toggleMenu');
+    }
     $( '.site-search i' ).addClass('fa-close').removeClass('fa-search');
 
     $('.site-search span').text( ( $('.site-search span' ).text() === 'Search' ) ? 'Close' : 'Search' );
@@ -223,7 +131,6 @@ module.exports = $(function(){
     }
 
     $(this).css('top', navHeight);
-
   });
 
   $('.site-search-dropdown').on('hide.zf.dropdown', function() {
@@ -232,41 +139,24 @@ module.exports = $(function(){
   });
 
 
-  function drilldownMenuHeight(){
-    if (Foundation.MediaQuery.current === 'small') {
-      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-      var drilldownHeight = $('.global-nav .is-drilldown').outerHeight();
-      var singleHeight = $('.global-nav .is-drilldown li').outerHeight() + 10;
-      $('.global-nav .is-drilldown ul').css({
-        'height': drilldownHeight +  singleHeight + 'px'
-      });
-    }
-  }
-
   $( window ).resize(function() {
-
     //check window width for mobile devices to prevent window resize on scroll.
     if ($(window).width() !== windowWidth) {
       windowWidth = $(window).width();
 
-      checkBrowserHeight( navHeight ) ;
+      //checkBrowserHeight( navHeight ) ;
 
       if (Foundation.MediaQuery.atLeast('medium')) {
-        resetLayout();
+        $('#page').removeClass('hide');
+        $('footer').removeClass('hide');
       }
     }
-    $(window).bind('orientationchange', function(e){
-      resetLayout();
-    });
-
     //orientation doesn't matter, always remove the no-scroll class
     $('body').removeClass('no-scroll');
   });
 
 
   /* prevent search dropdown from becoming dissconnected from header when keyboard is closed on iOS devices */
-
   $('.search-field').focusout(function() {
     if ( Foundation.MediaQuery.current === 'small' ) {
       window.scrollTo(0, 0);
