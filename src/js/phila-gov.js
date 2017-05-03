@@ -49,11 +49,9 @@ module.exports = $(function(){
     $('.global-nav .menu-icon').toggleClass('active');
     $('#page').toggleClass('hide');
     $('footer').toggleClass('hide');
-
-    Foundation.reInit('Equalizer');
   }
 
-  function checkBrowserHeight( ){
+  function checkBrowserHeight(){
     if ( $('body').hasClass('logged-in') ) {
       return;
     }
@@ -106,13 +104,15 @@ module.exports = $(function(){
       $('#page').removeClass('hide');
       $('footer').removeClass('hide');
     }
+    $( '.site-search i' ).removeClass('fa-close').addClass('fa-search');
+    $('.site-search span').text('Search');
   });
 
 
   /* Site search dropdown */
   $('.site-search-dropdown').on('show.zf.dropdown', function(){
     //menu toggle close when menu is already open
-    if ( $('.is-drilldown').is(':visible') ){
+    if ( (Foundation.MediaQuery.current === 'small') && $('.is-drilldown').is(':visible') ){
       $('.title-bar').foundation('toggleMenu');
     }
     $( '.site-search i' ).addClass('fa-close').removeClass('fa-search');
@@ -123,14 +123,11 @@ module.exports = $(function(){
 
     if ( $('.sticky').hasClass('is-stuck') ){
       navHeight = $('.sticky-container').height();
+    }else{
+      navHeight = $('.global-nav').height();
     }
 
     $(this).css('top', navHeight);
-  });
-
-  $('.site-search-dropdown').on('hide.zf.dropdown', function() {
-    $( '.site-search i' ).removeClass('fa-close').addClass('fa-search');
-    $('.site-search span').text('Search');
   });
 
   function showBodyContent(){
@@ -142,8 +139,6 @@ module.exports = $(function(){
     //check window width for mobile devices to prevent window resize on scroll.
     if ($(window).width() !== windowWidth) {
       windowWidth = $(window).width();
-
-      //checkBrowserHeight( navHeight ) ;
 
       if (Foundation.MediaQuery.atLeast('medium')) {
         showBodyContent();
@@ -191,7 +186,7 @@ module.exports = $(function(){
     var equalizerOptions = {
       equalizeOnStack: true,
       equalizeByRow: true,
-      equalizeOn: 'small'
+      equalizeOn: 'medium'
     };
 
     $('.equal-height').each( function() {
