@@ -81,9 +81,7 @@ module.exports = $(function(){
     }else{
 
       $('body').addClass('no-scroll');
-      $('#page').removeClass('hide');
-      $('footer').removeClass('hide');
-
+      showBodyContent();
     }
 
   }
@@ -138,6 +136,10 @@ module.exports = $(function(){
     $('.site-search span').text('Search');
   });
 
+  function showBodyContent(){
+    $('#page').removeClass('hide');
+    $('footer').removeClass('hide');
+  }
 
   $( window ).resize(function() {
     //check window width for mobile devices to prevent window resize on scroll.
@@ -147,8 +149,7 @@ module.exports = $(function(){
       //checkBrowserHeight( navHeight ) ;
 
       if (Foundation.MediaQuery.atLeast('medium')) {
-        $('#page').removeClass('hide');
-        $('footer').removeClass('hide');
+        showBodyContent();
       }
     }
     //orientation doesn't matter, always remove the no-scroll class
