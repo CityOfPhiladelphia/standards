@@ -34,8 +34,6 @@
     @include breakpoint(medium up) {
       margin-bottom:0;
       text-align: center;
-      //TODO: replace "department-menu" with more semantic "secondary-menu"
-      .department-menu,
       .secondary-menu {
         background: none;
         .dropdown li{
@@ -52,12 +50,7 @@
               padding: $spacing-small $spacing-large;
             }
             > a::after{
-              content: '';
               display: inline;
-              border-left: 5px solid transparent;
-              border-right: 5px solid transparent;
-              border-top: 5px solid color(white);
-              border-bottom: none;
               left: 5px;
               position: relative;
               margin: auto 0;
