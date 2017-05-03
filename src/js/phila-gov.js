@@ -49,8 +49,6 @@ module.exports = $(function(){
     $('.global-nav .menu-icon').toggleClass('active');
     $('#page').toggleClass('hide');
     $('footer').toggleClass('hide');
-
-    Foundation.reInit('Equalizer');
   }
 
   function checkBrowserHeight( ){
@@ -190,7 +188,7 @@ module.exports = $(function(){
     var equalizerOptions = {
       equalizeOnStack: true,
       equalizeByRow: true,
-      equalizeOn: 'small'
+      equalizeOn: 'medium'
     };
 
     $('.equal-height').each( function() {
