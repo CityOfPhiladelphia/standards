@@ -314,8 +314,8 @@ $closebutton-size: (
   medium: 2em,
 );
 $closebutton-lineheight: 1;
-$closebutton-color: color(dark-gray);
-$closebutton-color-hover: color(black);
+$closebutton-color: color(ben-franklin-blue);
+$closebutton-color-hover: color(dark-gray);
 
 // 16. Drilldown
 // -------------
@@ -510,8 +510,8 @@ $responsive-embed-ratios: (
 $reveal-background: color(white);
 $reveal-width: 600px;
 $reveal-max-width: $global-width;
-$reveal-padding: $global-padding;
-$reveal-border: 1px solid color(medium-gray);
+$reveal-padding: $global-padding * 2;
+$reveal-border: none;
 $reveal-radius: $global-radius;
 $reveal-zindex: 1005;
 $reveal-overlay-background: rgba(color(black), 0.45);
