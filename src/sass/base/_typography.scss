@@ -67,7 +67,7 @@ h3, .h3{
 }
 
 // Paragraphs + heading interaction
-article{
+section{
 
   h1 + p,
   h2 + p,
@@ -139,7 +139,7 @@ a:hover, a:active, a:focus {
   border-left:5px solid color(flyers-orange);
 }
 
-article {
+section {
   ol, ul {
     overflow: hidden;
     padding-left: 1.5rem;
@@ -147,6 +147,12 @@ article {
       margin-top:$spacing-medium;;
 
     }
+  }
+}
+ul ul{
+  list-style-type: circle;
+  ul {
+    list-style-type: square;
   }
 }
 
