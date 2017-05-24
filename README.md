@@ -1,5 +1,7 @@
-# Digital Standards
-Digital standard assets from the City of Philadelphia.
+# Digital Standards Assets
+This is an open-source collection of CSS, JavaScript, font and image files used to create the look and feel of beta.phila.gov.
+
+
 
 # Local development
 - Install dependencies. You'll need:
