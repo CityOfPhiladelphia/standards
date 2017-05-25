@@ -1,22 +1,11 @@
 .inside-border-group{
   background: color(ghost-gray);
 
-  &.break-thirds{
-    .inside-border-group-item{
-      @media only screen and (min-width: 40em) {
-        &:nth-of-type(3n){
-          border-right: 0;
-        }
-      }
-    }
-  }
   .inside-border-group-item{
-    border-right: 2px solid color(white);
-    border-bottom: 2px solid color(white);
+    border: 1px solid color(white);
+    padding-left:0;
+    padding-right:0;
 
-    &:last-of-type{
-      border-right: 0;
-    }
     > a{
       &:hover{
         background:color(ben-franklin-blue);
@@ -32,5 +21,11 @@
       display:table-cell;
       vertical-align:middle;
     }
+  }
+}
+
+.no-js {
+  .inside-border-group-item{
+    border:none;
   }
 }

@@ -1,9 +1,9 @@
-var $ = require('jquery');
-var foundation = require('foundation-sites');
+module.exports = require('jquery');
+module.exports = require('foundation-sites');
 
-require('./feedback');
-require('./feedback-toggle');
-require('./back-to-top');
-require('./phila-gov');
-require('./responsive-tables');
-require('./svg-fallback');
+var philaFeedback = require('./feedback');
+var philaFeedbackToggle = require('./feedback-toggle');
+var philaBackToTop = require('./back-to-top');
+var philaGov = require('./phila-gov');
+var philaTables = require('./responsive-tables');
+var philaSVG = require('./svg-fallback');
