@@ -31,9 +31,10 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "setup": "mkdirp dist/js",
+    "prebuild": "cp -R node_modules/foundation-sites src/vendor/foundation-sites",
     "assets": "cp -R node_modules/font-awesome/fonts dist/ && cp -R src/img dist/",
-    "build:css": "node-sass --include-path node_modules/foundation-sites/scss --include-path node_modules/font-awesome/scss --output-style compressed --source-map true src/sass/phila-standards.scss dist/css/phila-standards.css",
-    "build:js": "browserify src/js/main.js | uglifyjs -mc > dist/js/phila-standards.min.js",
+    "build:css": "node-sass --include-path node_modules/font-awesome/scss --output-style compressed --source-map true src/sass/phila-standards.scss dist/css/phila-standards.css",
+    "build:js": "browserify src/js/main.js --full-paths | uglifyjs -mc > dist/js/phila-standards.min.js",
     "build": "yarn setup && yarn assets && yarn build:css && yarn build:js",
     "postbuild": "postcss --use autoprefixer -b 'last 2 versions' < dist/css/phila-standards.css -o dist/css/phila-standards.css",
     "watch:css": "yarn build:css && yarn build:css -- -w",
