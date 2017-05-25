@@ -3,7 +3,7 @@ Digital standard assets from the City of Philadelphia.
 
 # Local development
 - Install dependencies. You'll need:
-  - npm
+  - Node.js
   - [Yarn](yarnpkg.com)
 - Clone this repo and cd into the directory
 - Run `yarn start` to watch directories.
