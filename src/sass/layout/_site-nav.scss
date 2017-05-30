@@ -47,7 +47,7 @@
       background: color(dark-ben-franklin);
       color: color(white);
     }
-    .is-right-arrow {
+    .opens-right {
       > a::after{
         content: '+';
         font-size: 20px;
