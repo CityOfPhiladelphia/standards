@@ -66,11 +66,6 @@
              > a{
                background: color(dark-gray);
                color:color(white);
-               &::after{
-                 border-top: none;
-                 border-bottom: 5px solid color(white);
-                 top: -10px;
-               }
               }
             }
           }
