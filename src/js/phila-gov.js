@@ -186,7 +186,7 @@ module.exports = $(function(){
     var equalizerOptions = {
       equalizeOnStack: true,
       equalizeByRow: true,
-      equalizeOn: 'medium'
+      equalizeOn: 'small'
     };
 
     $('.equal-height').each( function() {
