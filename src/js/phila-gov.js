@@ -11,13 +11,19 @@ module.exports = $(function(){
 
   var translate = setTimeout(function() { $('#google_translate_element a').prepend('<i class="fa fa-globe"></i>'); }, 1000);
 
-  var drilldownOptions = {
-    autoHeight: false,
-    scrollTop: true,
-    parentLink: true,
-    scrollTopElement: 'body'
-  };
-  var mobileMenu = new Foundation.Drilldown( $('#mobile-nav-drilldown'), drilldownOptions );
+  if ($('#mobile-nav-drilldown').length){
+
+    var drilldownOptions = {
+      autoHeight: false,
+      scrollTop: true,
+      parentLink: true,
+      scrollTopElement: 'body'
+    };
+
+    var mobileMenu = new Foundation.Drilldown( $('#mobile-nav-drilldown'), drilldownOptions );
+  }else{
+    console.warn('Standards JS: Add the #mobile-nav-drilldown markup.');
+  }
 
   /* Drilldown menu */
   $(document).on('toggled.zf.responsiveToggle', '[data-responsive-toggle]', function(){
