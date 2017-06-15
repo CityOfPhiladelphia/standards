@@ -1,0 +1,29 @@
+@media print {
+  #mobile-nav-drilldown,
+  .title-bar,
+  .feedback,
+  .primary-menu .search-icon,
+  .show-for-small-only{
+    display:none !important;
+  }
+  a[href]:after {
+    content: "";
+  }
+  article a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  .secondary-menu.menu>li {
+    vertical-align: top;
+  }
+  .valign{
+    .valign-cell{
+      width:auto;
+    }
+  }
+  .sticky.is-anchored.is-at-bottom{
+    top: 0 !important;
+  }
+  footer.site-footer.site-footer .fat section{
+    border-bottom: none;
+  }
+}
