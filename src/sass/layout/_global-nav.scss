@@ -366,7 +366,7 @@
       height:100%;
     }
 
-    .columns {
+    .inner-wrapper .columns {
       text-align: left;
       border-left: 2px solid color(white);
       border-right: 2px solid color(white);
@@ -389,6 +389,7 @@
         }
       }
     }
+    
     .mega-menu-footer {
       a {
         padding: 1.5rem 4rem;
