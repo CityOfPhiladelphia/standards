@@ -156,6 +156,16 @@ ul ul{
   }
 }
 
+article{
+  ol, ul{
+    margin-left: 3px;
+    display: table;
+  }
+  li{
+    margin-left: 1rem;
+    text-indent: 0rem;
+  }
+}
 .large-text{
   font-size: $large-font-base;
   font-weight: 600;
