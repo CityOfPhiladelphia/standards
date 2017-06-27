@@ -8,9 +8,7 @@ module.exports = $(function(){
   var tables = $( "table.responsive" );
 
   if ( tables.length > 0 ) {
-
     tableCount = tables.length;
-
     for ( var i = 0; i < tableCount; i++ ) {
       table = $( tables[ i ] );
 
@@ -33,7 +31,11 @@ module.exports = $(function(){
           th = ths[ k ];
 
           //put tds into object so we can inject titleLables
-          tableCell = $( tds[ k ] );
+          if ( tds.innerText ) {
+            tableCell = $( tds[ k ] );
+          }else{
+            tableCell = $( tds[ '' ] );
+          }
 
           //get the text of the table headings
           text = th.textContent || th.innerText || "";
