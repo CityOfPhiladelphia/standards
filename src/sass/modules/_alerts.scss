@@ -1,6 +1,7 @@
 #site-wide-alert{
   background: color(dark-ben-franklin);
   color: color(white);
+  position: relative;
   .icon {
     color:color(electric-blue);
   }
@@ -14,6 +15,9 @@
   a:link, a:visited{
     color: color(white);
     text-decoration: underline;
+  }
+  button.close-button{
+    color:color(white);
   }
 }
 
