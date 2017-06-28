@@ -61,6 +61,12 @@ ul.inline-list li{
   white-space: nowrap!important;
 }
 
+table.no-alternate{
+   tr:nth-child(even){
+     background-color:color(ghost-gray);
+   }
+}
+
 .accessible,
 a.skip-link,
 .screen-reader-text {
