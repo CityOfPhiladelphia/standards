@@ -6,11 +6,11 @@
     color:color(electric-blue);
   }
   .message{
-    @include secondary-font(400);
-    font-size: .9rem;
+    @include secondary-font(700);
   }
   .dates{
     font-style: italic;
+    font-weight: 400;
   }
   a:link, a:visited{
     color: color(white);
