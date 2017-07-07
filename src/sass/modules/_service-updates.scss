@@ -1,60 +1,44 @@
 //Service Updates
-.home{
-  .service-update-row{
-    padding-top: $spacing-medium;
-  }
-}
-.service-update-row{
-  background: $white;
-  padding-top: $spacing-extra;
-}
-
 .service-update{
   color: #444444;
   margin-bottom: .5rem;
   @include secondary-font(400);
+  text-align: left;
 
-  &.service-update--critical {
-    > div {
-      > div {
-        background: color(light-red);
-        &.details{
-          background: transparentize( color(light-red), 0.5);
-        }
-      }
+  thead, tbody, tfoot, tbody tr:nth-child(even){
+    background:none;
+  }
+
+  .service-update--critical {
+    th{
+      background: color(light-red);
+    }
+    td{
+      background: transparentize( color(light-red), 0.5);
     }
   }
-  &.service-update--warning {
-    > div {
-      > div {
-        background: color(light-bell);
-        &.details{
-          background: transparentize( color(light-bell), 0.5) !important;
-        }
-      }
+  .service-update--warning {
+    th{
+      background: color(light-bell);
+    }
+    td{
+      background: transparentize( color(light-bell), 0.5);
     }
   }
-  > div {
-    &:first-of-type{
-      border-right: 5px solid transparent;
-    }
-    > div {
-      background: color(light-kelly-drive);
-      &.details{
-        background: transparentize( color(light-kelly-drive), 0.5);
-      }
-    }
+
+  th {
+    background: color(light-kelly-drive);
+    width:30%;
   }
-  .icon {
+  td {
+    background: transparentize( color(light-kelly-drive), 0.5);
+  }
+  .icon-label{
+    font-weight:normal;
+    text-transform: uppercase;
+    vertical-align: text-bottom;
     @include breakpoint(small only) {
-      text-align: center;
-    }
-    .icon-label{
-      text-transform: uppercase;
-      vertical-align: text-bottom;
-      @include breakpoint(small only) {
-        display: block;
-      }
+      display: block;
     }
   }
 }
