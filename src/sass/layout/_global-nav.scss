@@ -103,7 +103,7 @@
   .title-bar {
     color:color(dark-ben-franklin);
     position: absolute;
-
+    top:0;
     .menu-icon {
       position: relative;
     }
@@ -201,6 +201,7 @@
     }
 
     .top-bar{
+      top: 0;
       background-color: color(white);
       &.no-js{
         display:none;
@@ -389,7 +390,7 @@
         }
       }
     }
-    
+
     .mega-menu-footer {
       a {
         padding: 1.5rem 4rem;
