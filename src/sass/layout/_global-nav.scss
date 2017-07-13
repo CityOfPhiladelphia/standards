@@ -138,6 +138,7 @@
 
   .is-drilldown {
     max-width: 100% !important;
+    background: color(ghost-gray);
 
     ul {
 
@@ -362,10 +363,6 @@
     left: 0 !important;
     z-index: 10000;
     position: fixed;
-
-    &.mega-menu-dropdown{
-      height:100%;
-    }
 
     .inner-wrapper .columns {
       text-align: left;
