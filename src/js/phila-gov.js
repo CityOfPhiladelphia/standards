@@ -179,7 +179,7 @@ module.exports = $(function(){
     $.ajax({
       method: "GET",
       url: wpURL,
-      data: 'parent=0&per_page=100'
+      data: 'parent=0&per_page=100&orderby=title'
     })
     .done(function( data ) {
       $.each(data, function(i, value) {
