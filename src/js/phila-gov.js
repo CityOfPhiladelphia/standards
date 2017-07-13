@@ -181,10 +181,11 @@ module.exports = $(function(){
       url: wpURL,
       data: 'parent=0&per_page=100&orderby=title'
     })
-    .done(function( data ) {
+    .done( function( data ) {
       $.each(data, function(i, value) {
         $('#services-list [data-services-menu]').prepend('<div class="medium-8 columns end"><div class="valign"><div class="valign-cell"><a href=' + value.link + ' data-equalizer-watch><span><i class="fa ' + value.meta.phila_page_icon  + ' fa-2x phm"></i> ' + value.title.rendered + '</span></a></div></div></div>');
       })
+      Foundation.reInit($('#phila-menu-wrap'));
     })
     .fail(function( data ) {
       console.warn('Call to the WP API failed.');
