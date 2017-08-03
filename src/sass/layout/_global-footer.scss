@@ -7,8 +7,8 @@
 
 footer{
   &.site-footer {
-    background: color(white);
     margin-top: $spacing-large;
+    background: color(white);
 
     .department-logo{
       width: 300px;
@@ -25,8 +25,8 @@ footer{
       .columns {
         margin: .71429rem 0;
         ul.inline-list {
-          font-size: .92857rem;
           margin: 0;
+          font-size: .92857rem;
           padding: 0;
           li {
             margin: 0;
@@ -40,7 +40,7 @@ footer{
             }
             a:hover,
             a:active {
-             color: color(electric-blue);
+              color: color(electric-blue);
             }
           }
         }
@@ -77,9 +77,9 @@ footer{
       .vcard-label,
       .tel a:link,
       .email a:link{
+        margin: 1em 0;
         font-weight: normal;
         text-transform: none;
-        margin: 1em 0;
         .tel .vcard-label,
         .fax .vcard-label,
         .email .vcard-label{
@@ -103,11 +103,11 @@ footer{
       .intro,
       .trending-requests {
         a:link, a:visited {
-         color:color(dark-ben-franklin);
-         font-weight:normal;
+          color:color(dark-ben-franklin);
+          font-weight:normal;
         }
         a:hover, a:active{
-         color:color(dark-gray);
+          color:color(dark-gray);
         }
       }
     }
@@ -132,7 +132,7 @@ footer{
 
     &.site-footer {
       .fa {
-      vertical-align: middle;
+        vertical-align: middle;
       }
       .fa-stack {
         .fa-tv{
@@ -170,12 +170,12 @@ footer{
           }
           a:hover,
           a:active {
-           color: color(electric-blue);
+            color: color(electric-blue);
           }
           ul, ol {
+            margin: 0;
             list-style: none;
             padding: 0;
-            margin: 0;
             line-height: 1.6rem;
           }
         }
