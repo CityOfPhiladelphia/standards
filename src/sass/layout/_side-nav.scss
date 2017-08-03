@@ -1,9 +1,7 @@
-//TODO: Deprecate too-specific "services-nav"
-nav#services-nav,
-nav#side-nav{
+nav#side-nav{ //sass-linter:disable-line no-ids
   a{
-    font-weight:600;
     display: block;
+    font-weight:600;
     line-height: 16px;
     padding: 1rem .5rem;
   }
@@ -16,8 +14,8 @@ nav#side-nav{
   }
 
   ul {
-    list-style: none;
     margin:0;
+    list-style: none;
     padding:0;
 
     > li.current_page_item {
