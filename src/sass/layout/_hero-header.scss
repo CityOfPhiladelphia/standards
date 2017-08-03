@@ -5,7 +5,7 @@
   text-align: center;
 
   @include breakpoint(small only) {
-    background-image: none !important;
+    background-image: none !important; //sass-lint:disable-line no-important
   }
 
   @include breakpoint(medium up) {
@@ -32,7 +32,7 @@
       }
     }
   }
-  #site-nav {
+  #site-nav { //sass-lint:disable-line no-ids
     text-align: left;
     @include breakpoint(medium up) {
       margin-bottom:0;
@@ -54,18 +54,18 @@
             }
             > a::after{
               display: inline;
+              margin: auto 0;
               left: 5px;
               position: relative;
-              margin: auto 0;
               float: none;
               top: 10px;
               bottom: 0;
             }
-           &.is-active,
-           &.current-menu-ancestor{
-             > a{
-               background: color(dark-gray);
-               color:color(white);
+            &.is-active,
+            &.current-menu-ancestor{
+              > a{
+                background: color(dark-gray);
+                color:color(white);
               }
             }
           }
