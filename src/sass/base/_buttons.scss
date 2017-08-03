@@ -24,16 +24,16 @@
     }
 
     .fa {
+      display: inline-block;
+      margin-right: .25rem;
       background: color(dark-gray);
       color:color(white);
-      margin-right: .25rem;
-      padding: .35em .5em .5em .35em;
       font-size: 1.7em;
       max-height: 40px;
-      vertical-align: sub;
+      padding: .35em .5em .5em .35em;
       position: static;
+      vertical-align: sub;
       width: 2.85714rem;
-      display: inline-block;
     }
 
   }
