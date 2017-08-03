@@ -33,8 +33,8 @@ h1, .h1{
 }
 
 h2, .h2 {
-  padding:0;
   margin:rem-calc(13 0);
+  padding:0;
   letter-spacing:.03rem;
 }
 
@@ -113,17 +113,17 @@ a:hover, a:active, a:focus {
 }
 
 .small-text {
+  display:block;
   color: color(dark-gray);
   font-size: rem-calc(13);
-  display:block;
 }
 
 // Tooltip
 .tooltip {
   font-size:rem-calc(12);
   p{
-    font-size:rem-calc(12);
     margin:rem-calc(6 0);
+    font-size:rem-calc(12);
   }
 }
 
@@ -158,8 +158,8 @@ ul ul{
 
 article{
   ol, ul{
-    margin-left: 2rem;
     display: table;
+    margin-left: 2rem;
   }
   li{
     margin-left: 1rem;
