@@ -1,4 +1,4 @@
-#mobile-nav{
+#mobile-nav{ // sass-lint:disable-line no-ids
   padding-right:0;
   padding-left:0;
 }
@@ -47,16 +47,16 @@
           content: none;
         }
         &::after {
-          content: '|';
           display: inline;
+          content: '|';
           background: color(ben-franklin-blue);
           color: rgba(color(light-ben-franklin), .6);
         }
 
         a {
-          color: color(white);
-          padding: $spacing-small;
           display: inline-block;
+          padding: $spacing-small;
+          color: color(white);
           text-align: center;
 
           &:hover,
@@ -79,6 +79,7 @@
   }
 
   .sticky{
+    // sass-lint:disable-block no-important
     background: color(white);
     width: 100% !important;
     max-width: 100% !important;
@@ -137,7 +138,7 @@
   }
 
   .is-drilldown {
-    max-width: 100% !important;
+    max-width: 100% !important; // sass-lint:disable-line no-important //TODO: check if this is necessary
     background: color(ghost-gray);
 
     ul {
@@ -154,8 +155,8 @@
           font-size:.9rem;
         }
         a{
-          padding:1rem;
           display: block;
+          padding:1rem;
           line-height: 1;
 
           &:hover,
@@ -181,20 +182,20 @@
         border-color:transparent transparent transparent color(white);
       }
     }
-      .js-current-section{
-        padding: .5rem 1rem;
-        font-size: 1.3rem;
-        text-transform: none;
-      }
+    .js-current-section{
+      padding: .5rem 1rem;
+      font-size: 1.3rem;
+      text-transform: none;
     }
+  }
 
 
-    .js-drilldown-back{
-      >a:hover::before,
-      >a:active::before{
-        border-color: transparent color(white) transparent transparent;
-      }
+  .js-drilldown-back{
+    >a:hover::before,
+    >a:active::before{
+      border-color: transparent color(white) transparent transparent;
     }
+  }
 
   @include breakpoint(small only) {
     .mega-menu-dropdown.dropdown-pane{
@@ -250,8 +251,8 @@
       //TODO: some of this could be cleaned up
       //big arrow
       &.hover::after{
-        content: '';
         display: block;
+        content: '';
         width: 0;
         height: 0;
         border-left: 1rem solid transparent;
@@ -262,12 +263,10 @@
         left:38%;
         right:50%;
         position: absolute;
-
-      }
-       //this is to account for when the dropdown panel is visible AND when the normal :hover state is active
+    }
+      //this is to account for when the dropdown panel is visible AND when the normal :hover state is active
       &.hover {
         background: color(dark-ben-franklin);
-
         //panel is open
         a{
           color: color(white);
@@ -286,9 +285,10 @@
             }
           }
           //little arrow
-         &::after{
-            content: '';
+          &::after{
             display: inline;
+            margin: auto 0;
+            content: '';
             width: 0;
             height: 0;
             border: inset 5px;
@@ -298,63 +298,61 @@
             height: 0;
             left: 74%;
             position: absolute;
-            margin: auto 0;
             float: none;
             top: 0;
             bottom: 0;
             height: 10px;
+            }
           }
         }
-      }
       //not open
       a {
-        padding: $spacing-large 2.5rem $spacing-large 1.5rem !important;
+        padding: $spacing-large 2.5rem $spacing-large 1.5rem !important; // sass-lint:disable-line no-important
         height: inherit;
 
         @media screen and (min-width: 40em) and (max-width: 50em) {
           padding: 1rem 2rem;
         }
 
-       &:hover::after,
-       &:active::after{
-        border-color: color(dark-ben-franklin) transparent transparent transparent;
-
-       }
-       &::after {
-        //little arrow
-        content: '';
-        display: inline;
-        width: 0;
-        height: 0;
-        border: inset 5px;
-        border-color: color(dark-ben-franklin) transparent transparent;
-        border-top-style: solid;
-        border-bottom-width: 0;
-        left: 74%;
-        position: absolute;
-        margin: auto 0;
-        float: none;
-        top: 0;
-        bottom: 0;
-        height: 10px;
-       }
+        &:hover::after,
+        &:active::after{
+          border-color: color(dark-ben-franklin) transparent transparent transparent;
+        }
+        &::after {
+          //little arrow
+          display: inline;
+          margin: auto 0;
+          content: '';
+          width: 0;
+          height: 0;
+          border: inset 5px;
+          border-color: color(dark-ben-franklin) transparent transparent;
+          border-top-style: solid;
+          border-bottom-width: 0;
+          left: 74%;
+          position: absolute;
+          float: none;
+          top: 0;
+          bottom: 0;
+          height: 10px;
+        }
         &.js-is-current {
           color:color(white);
           background: color(dark-ben-franklin);
-
           &::after{
             border-color: color(white) transparent transparent transparent;
           }
           &:hover::after,
           &:active::after{
             border-color: color(dark-ben-franklin) transparent transparent  transparent;
+            }
           }
         }
       }
     }
-  }
 
   .dropdown-pane{
+    // sass-lint:disable-block no-important
     max-width: 100% !important;
     width:100% !important;
     border: 0;
@@ -373,8 +371,8 @@
       padding-right: 0;
 
       a {
-        padding: 1.5rem;
         display:block;
+        padding: 1.5rem;
         background-color: color(ghost-gray);
         width: 100%;
 
@@ -387,7 +385,6 @@
         }
       }
     }
-
     .mega-menu-footer {
       a {
         padding: 1.5rem 4rem;
@@ -401,6 +398,7 @@
       .left-arrow-indent{
         position: relative;
         &:before {
+          margin: auto 0;
           content: '';
           width: 0;
           height: 0;
@@ -412,7 +410,6 @@
           right:0;
           top:0;
           bottom:0;
-          margin: auto 0;
         }
       }
     }
@@ -425,7 +422,7 @@
     }
   }
 
-  #services-list{
+  #services-list{ // sass-lint:disable-line no-ids
     .inner-wrapper{
       width:100%;
       height:100%;
@@ -448,9 +445,9 @@
       padding-bottom: .75rem;
 
       .fa{
+        display: block;
         padding-bottom: $spacing-small;
         font-size: 3.7em;
-        display: block;
       }
     }
     color:color(dark-ben-franklin);
@@ -463,9 +460,9 @@
 header {
   .logo svg,
   .logo img{
+    display: block;
     max-width:170px;
     max-height:45px;
-    display: block;
     opacity: 1;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
@@ -486,8 +483,8 @@ header {
     position: relative;
 
     &::before{
-      content: '';
       display: block;
+      content: '';
       width: 0;
       height: 0;
       border-left: 1rem solid transparent;
