@@ -4,7 +4,7 @@
  *
  *
 */
-
+// sass-lint:disable no-important, no-ids
 label {
   margin:1rem 0;
 }
@@ -46,8 +46,8 @@ input[type="time"]:focus,
 input[type="url"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-    border: 2px solid color(electric-blue);
-    background-color:$white;
+  border: 2px solid color(electric-blue);
+  background-color:$white;
 }
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
@@ -69,8 +69,8 @@ input:-webkit-autofill {
   }
 
   + label::before {
-    content: $unselected-icon;
     display:inline-block;
+    content: $unselected-icon;
     padding-right:10px;
     font-family: FontAwesome;
     color: color(dark-ben-franklin);
@@ -78,9 +78,9 @@ input:-webkit-autofill {
   }
 
   &:checked + label::before {
-    content: $selected-icon;
     display:inline-block;
     padding-right:10px;
+    content: $selected-icon;
     font-family: FontAwesome;
   }
 }
@@ -99,6 +99,8 @@ input[type=radio] {
   button{
     @include secondary-font(400);
     display: inline-block;
+    margin: 0 0 1rem 0;
+    padding: 0.85em 1em;
     text-align: center;
     line-height: 1;
     cursor: pointer;
@@ -107,8 +109,6 @@ input[type=radio] {
     vertical-align: middle;
     border: 1px solid transparent;
     border-radius: 0;
-    padding: 0.85em 1em;
-    margin: 0 0 1rem 0;
     font-size: .9rem;
     background-color: color(electric-blue);
     color: color(dark-gray);
@@ -123,16 +123,16 @@ input[type=radio] {
     margin-left: 0;
 
     li {
-      list-style: none;
       display: inline-block;
+      list-style: none;
       width: 100%;
     }
     ul, ol {
       padding-left:$spacing-medium;
       margin-left:$spacing-medium;
       li{
-        list-style: inherit;
         display: list-item;
+        list-style: inherit;
       }
     }
   }
@@ -144,9 +144,9 @@ input[type=radio] {
       }
     }
  }
- .form-label-left{
-   width:auto !important;
- }
+  .form-label-left{
+    width:auto !important;
+  }
 
   //Clearfixes
   [data-type="control_phone"],
@@ -158,8 +158,8 @@ input[type=radio] {
   .form-input{
     clear: both;
     &:before, &:after{
-      content: ' ';
       display: table;
+      content: ' ';
     }
   }
   //JotForm Checkboxes
@@ -205,11 +205,11 @@ input[type=radio] {
   }
   .form-label{
     display: block;
+    margin: 1rem 0;
     color: color(dark-gray);
     font-family: 'Montserrat', 'Tahoma', sans-serif;
     font-size: 1.21429rem;
     font-weight: bold;
-    margin: 1rem 0;
   }
   select,
   textarea,
@@ -270,8 +270,8 @@ input[type=radio] {
   // JotForm Date Picker widget
   [data-type="control_datetime"]{
     span{
-      float: left;
       margin: 0 1rem;
+      float: left;
       &:first-of-type{
         margin-left: 0;
       }
@@ -286,8 +286,8 @@ input[type=radio] {
   //JotForm Time widget
   [data-type="control_time"]{
     span{
-      float: left;
       margin: 0 2rem 0 0;
+      float: left;
       width: 5rem;
       &:last-of-type{
         margin-right: 0;
@@ -300,8 +300,8 @@ input[type=radio] {
   //JotForm Number widget
   [data-type="control_number"]{
     div{
-      float: left;
       margin: 0 2rem 0 0;
+      float: left;
       width: 5rem;
       &:last-of-type{
         margin-right: 0;
@@ -322,8 +322,8 @@ input[type=radio] {
   }
   .form-pagebreak-back-container,
   .form-pagebreak-next-container{
-      display: inline-block;
-      float: none;
+    display: inline-block;
+    float: none;
   }
   [type="text"]:focus,
   [type="password"]:focus,
@@ -371,10 +371,12 @@ input[type=radio] {
   #backToForm,
   #submitCheckedForm {
     @include secondary-font(400);
+    display: inline-block;
+    margin: 1em 0;
+    padding: 0.85em 1em;
     text-shadow:none;
     box-shadow:none;
     text-transform: uppercase;
-    margin: 1em 0;
     letter-spacing: .03rem;
     transition: background-color 300ms ease-in-out;
     border-radius: 0;
@@ -383,10 +385,8 @@ input[type=radio] {
     cursor: pointer;
     background: color(electric-blue);
     border-color: color(electric-blue);
-    display: inline-block;
     text-align: center;
     line-height: 1;
-    padding: 0.85em 1em;
     font-size: .9rem;
     color: color(white);
   }
@@ -452,12 +452,12 @@ input[type=radio] {
         color: #555;
         text-align: center;
         cursor: pointer;
-         &.otherDay{
-           color: #bbb;
-         }
-         &.weekend{
-           background: color(electric-blue);
-         }
+        &.otherDay{
+          color: #bbb;
+        }
+        &.weekend{
+          background: color(electric-blue);
+        }
       }
       .today {
         background: color(ben-franklin-blue) !important;
@@ -478,17 +478,17 @@ input[type=radio] {
     }
     .button{
       @include secondary-font(700);
+      display: table-cell;
+      margin: 0px;
       color: color(electric-blue);
       background-color: transparent;
       border-collapse: collapse;
       box-sizing: border-box;
       cursor: auto;
-      display: table-cell;
       font-size: 11px;
       height: 22px;
       letter-spacing: normal;
       line-height: 16.5px;
-      margin: 0px;
     }
   }
   th{
