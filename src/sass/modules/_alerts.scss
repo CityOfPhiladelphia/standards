@@ -1,4 +1,4 @@
-#site-wide-alert{
+#site-wide-alert{ //sass-lint:disable-line no-ids
   background: color(dark-ben-franklin);
   color: color(white);
   position: relative;
@@ -28,9 +28,9 @@
     padding: $spacing-small $spacing-none;
 
     p {
-      font-size: .85rem;
       display:block;
       margin: 0;
+      font-size: .85rem;
     }
     a:link, a:visited{
       font-size: .85rem;
