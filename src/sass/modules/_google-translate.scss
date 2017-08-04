@@ -1,3 +1,4 @@
+// sass-lint:disable no-ids, no-important
 #google_translate_element {
   display: inline-block;
   font-size: .8rem;
@@ -24,12 +25,11 @@
   }
 
   .goog-te-gadget-simple{
+    display: inline-block;
+    padding:0;
     background:none;
     border:none;
     text-transform: uppercase;
-    padding:0;
-    display: inline-block;
-
     img {
       display: none;
     }
@@ -46,11 +46,11 @@
       }
 
       &::after{
+        display: inline;
+        margin: 0;
         border: inset 5px;
         border-color: #fff transparent transparent;
         border-top-style: solid;
-        margin: 0;
-        display: inline;
         border-bottom-width: 0;
         content: '';
         position: absolute;
@@ -59,14 +59,14 @@
         top: 10px;
       }
       .fa::after{
-        content: 'Translate';
         display: inline-block;
-        font-family: 'Montserrat', 'Tahoma', sans-serif;
         padding: 0 0 0 .5rem;
+        content: 'Translate';
+        font-family: 'Montserrat', 'Tahoma', sans-serif;
       }
 
-    span{
-      display: none;
+      span{
+        display: none;
         &:hover{
           color: color(ben-franklin-blue) !important;
         }
