@@ -1,4 +1,4 @@
-nav#side-nav{ //sass-linter:disable-line no-ids
+nav#side-nav{ //sass-lint:disable-line no-ids
   a{
     display: block;
     font-weight:600;
@@ -27,27 +27,25 @@ nav#side-nav{ //sass-linter:disable-line no-ids
     ul {
       display: none;
     }
-  li{
-    span{
-      display: inline-block;
-      //TODO: Remove max-width, this is a temp fix
-      max-width: 225px;
-    }
-  }
-  &.children{
-    li {
-      border-bottom: 2px solid color(white);
-
-    a{
-      padding:.5rem;
-      margin-left: 1rem;
-    }
-
-      &:last-child{
-        margin-bottom: $spacing-small;
-        border-bottom: none;
-        }
+    li{
+      span{
+        display: inline-block;
+        //TODO: Remove max-width, this is a temp fix
+        max-width: 225px;
       }
+    }
+    &.children{
+      li {
+        border-bottom: 2px solid color(white);
+        a{
+          padding:.5rem;
+          margin-left: 1rem;
+        }
+        &:last-child{
+          margin-bottom: $spacing-small;
+          border-bottom: none;
+          }
+        }
       .children li a{
         margin-left:2rem;
       }
