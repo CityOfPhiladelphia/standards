@@ -1,18 +1,16 @@
-#site-nav{
+#site-nav{//sass-lint:disable-line no-ids
   text-transform: uppercase;
 
   ul{
     margin:0;
     padding:0;
-
-      li li{
-        border-bottom:1px solid color(sidewalk);
-
+    li li{
+      border-bottom:1px solid color(sidewalk);
       &:last-child{
-          border-bottom: none;
-        }
+        border-bottom: none;
       }
     }
+  }
 
   li{
     &.is-active > a {
