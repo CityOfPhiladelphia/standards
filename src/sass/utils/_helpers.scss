@@ -1,3 +1,4 @@
+//sass-lint:disable no-important
 ul.inline-list li{
   display: inline-block;
 }
@@ -62,9 +63,9 @@ ul.inline-list li{
 }
 
 table.no-alternate{
-   tr:nth-child(even){
-     background-color:color(ghost-gray);
-   }
+  tr:nth-child(even){
+    background-color:color(ghost-gray);
+  }
 }
 
 .accessible,
@@ -161,7 +162,7 @@ ul.border-bottom-list li{
 
 //This is a fix for issues related to scrolling on iOS
 html.is-reveal-open{
-   overflow: hidden;
+  overflow: hidden;
 }
 .directory{
   .reveal {
@@ -182,7 +183,7 @@ html.is-reveal-open{
   vertical-align: bottom;
 }
 
-.hover-fade{
+.hover-fade, %hover-fade{
   opacity:1;
   transition: opacity .25s ease-in-out;
   -moz-transition: opacity .25s ease-in-out;
@@ -197,5 +198,5 @@ html.is-reveal-open{
   a:hover {
     color: color(ben-franklin-blue);
   }
-  @extend .hover-fade;
+  @extend %hover-fade;
 }
