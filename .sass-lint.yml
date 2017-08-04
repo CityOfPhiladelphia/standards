@@ -29,8 +29,6 @@ rules:
   no-important: 2
   hex-notation:
     - 2
-    -
-      style: uppercase
   indentation:
     - 2
     -
@@ -44,7 +42,3 @@ rules:
       ignore-custom-properties: true
   variable-for-property:
     - 2
-    -
-      properties:
-        - margin
-        - content
