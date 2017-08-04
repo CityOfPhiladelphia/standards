@@ -1,131 +1,60 @@
-ul.border-bottom-list li{
-  border-bottom:1px solid color(dark-gray);
-  padding:$spacing-small 0;
-  &:last-child{
-    border-bottom: none;
+$colors: (
+  ben-franklin-blue: #2176d2,
+  dark-ben-franklin: #0f4d90,
+  light-ben-franklin: #96c9ff,
+  electric-blue: #25cef7,
+
+  bell-yellow: #f3c613,
+  light-bell: #ffefa2,
+
+  kelly-drive-green: #58c04d,
+  light-kelly-drive: #b9f2b1,
+
+  flyers-orange: #f99300,
+  light-red: #fed0d0,
+  light-blue: #DAEDFE,
+
+  black: #000000,
+  dark-gray: #444,
+  medium-gray: #a1a1a1,
+  sidewalk: #cfcfcf,
+  ghost-gray: #f0f0f0,
+  white: #fff,
+
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@each $value in $colors {
+  .#{nth($value, 1)} {
+    color: nth($value, 2) !important;
+  }
+  .bg-#{nth($value, 1)} {
+    background-color: nth($value, 2) !important;
+  }
+  .bdr-#{nth($value, 1)} {
+    border-color: nth($value, 2) !important;
   }
 }
 
-.columns-2-mu {
-  @media screen and (min-width: 40em) {
-    -moz-column-count: 2;
-    -moz-column-gap: 1.42857rem;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 1.42857rem;
-    column-count: 2;
-    column-gap: 1.42857rem;
-  }
+//for some reason black isn't being parsed correctly with the above function, so we're doing it manually
+.black {
+  color: color(black);
 }
-
-
-.break-after {
-  &:after {
-    white-space: pre;
-    content: '\A';
-  }
+.bg-black{
+  background-color: color(black);
 }
-.break-after-mu {
-  @media screen and (min-width: 40em) {
-    &:after {
-      white-space: pre;
-      content: '\A';
-    }
-  }
+.bdr-black{
+  border-color: color(black);
 }
-
-.break-before {
-  &:before {
-    white-space: pre;
-    content: '\A';
-  }
+.white {
+  color: color(white);
 }
-.break-before-sm {
-  &:before {
-    white-space: pre;
-    content: '\A';
-  }
-  @media screen and (min-width: 40em) {
-    &:before {
-      white-space: normal;
-      content: none;
-    }
-  }
+.bg-white{
+  background-color: color(white);
 }
-.break-before-mu {
-  @media screen and (min-width: 40em) {
-    &:before {
-      white-space: pre;
-      content: '\A';
-    }
-  }
-}
-
-
-.sentence-case {
-  &::first-letter {
-    text-transform: capitalize;
-  }
-}
-.inline-block {
-  display: inline-block;
-}
-
-.list-style-none {
-  list-style: none;
-}
-
-@media screen and (min-width: 40em) {
-  .valign-mu {
-    display: table;
-    height: inherit;
-  }
-}
-.full-width {
-  width: 100%;
-}
-
-//This is a fix for issues related to scrolling on iOS
-html.is-reveal-open{
-   overflow: hidden;
-}
-.directory{
-  .reveal {
-    &.full {
-      min-height: initial;
-    }
-  }
-}
-
-.item-fa-left-indent{
-  margin-left:1.4rem;
-}
-
-.valign-top{
-  vertical-align: top;
-}
-.valign-bottom{
-  vertical-align: bottom;
-}
-
-.hover-fade{
-  opacity:1;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
-
-  &:hover{
-    opacity: .5;
-  }
-}
-/*provides option to apply a hover-fade to items in which the link state should not change*/
-.hover-fade-keep-a{
-  a:hover {
-    color: color(ben-franklin-blue);
-  }
-  @extend .hover-fade;
-}
-//TODO: increase this size
-.phila-thumb img{
-  max-width: 250px;
-  height: auto;
+.bdr-white{
+  border-color:color(white);
 }
