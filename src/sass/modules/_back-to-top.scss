@@ -1,4 +1,4 @@
-#back-to-top {
+#back-to-top {//sass-lint:disable-line no-ids
   display: none;
 
   .fa{
@@ -6,6 +6,7 @@
   }
 
   @media screen and (min-width: 1190px) {
+    display: block;
     position: fixed;
     bottom: 5%;
     right: 2%;
@@ -15,7 +16,6 @@
     text-transform:uppercase;
     transition: opacity 0.2s ease-out;
     opacity: 0;
-    display: block;
     transition: opacity .25s ease-in-out;
   }
   &.show {
