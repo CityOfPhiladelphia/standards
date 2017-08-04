@@ -1,8 +1,8 @@
 //Service Updates
 .service-update{
-  color: color(dark-gray);
-  margin-bottom: .5rem;
   @include secondary-font(400);
+  margin-bottom: .5rem;
+  color: color(dark-gray);
   text-align: left;
 
   thead, tbody, tfoot, tbody tr:nth-child(even){
