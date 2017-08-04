@@ -1,21 +1,20 @@
 a{
   &.card{
+    @include transition( opacity, .2s );
+    display: block;
     color: color(dark-gray);
     font-weight: normal;
     margin-bottom:$spacing-medium;
     border-bottom: 5px solid color(ben-franklin-blue);
     font-size: rem-calc(13);
-    display: block;
     background:color(ghost-gray);
-
-    @include transition( opacity, .2s );
 
     h1, h2, h3, h4, h5, h6,
     .h1, .h2, .h3, .h4, .h5, .h6 {
-      color: color(dark-ben-franklin);
-      padding:0;
-      background: transparent;
       margin: 1rem 0;
+      padding:0;
+      color: color(dark-ben-franklin);
+      background: transparent;
       font-size: 1rem;
     }
     > a {
