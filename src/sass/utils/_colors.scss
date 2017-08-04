@@ -12,7 +12,7 @@ $colors: (
 
   flyers-orange: #f99300,
   light-red: #fed0d0,
-  light-blue: #DAEDFE,
+  light-blue: #daedfe,
 
   black: #000000,
   dark-gray: #444,
@@ -28,6 +28,7 @@ $colors: (
 }
 
 @each $value in $colors {
+  //sass-lint:disable-block no-important
   .#{nth($value, 1)} {
     color: nth($value, 2) !important;
   }
