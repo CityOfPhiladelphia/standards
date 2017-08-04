@@ -1,0 +1,1 @@
+sass-lint -c .sass-lint.yml --no-exit -v

@@ -30,6 +30,7 @@
     "watchify": "^3.8.0"
   },
   "scripts": {
+    "test": "tests/*",
     "clean": "rimraf dist/*",
     "setup": "mkdirp dist/js",
     "prebuild": "cp -R node_modules/foundation-sites src/vendor/foundation-sites",
