@@ -1,4 +1,3 @@
-@import '../vendor/foundation-sites/scss/foundation.scss';
 @import '../vendor/font-awesome/scss/font-awesome.scss';
 
 @import 'utils/variables';
@@ -10,6 +9,7 @@
 @import 'utils/placeholders';
 
 @import 'settings';
+@import 'foundation';
 
 @include foundation-global-styles;
 @include foundation-grid;
