@@ -40,9 +40,9 @@
       .secondary-menu {
         background: none;
         .dropdown li{
-          border-bottom:2px solid color(white);
+          border-bottom:2px solid white;
           &:last-child{
-            border-bottom:2px solid color(white);
+            border-bottom:2px solid white;
           }
         }
         >li {
@@ -65,12 +65,12 @@
             &.current-menu-ancestor{
               > a{
                 background: color(dark-gray);
-                color:color(white);
+                color:white;
               }
             }
           }
           >a {
-            color: color(white);
+            color: white;
             padding: $spacing-small $spacing-medium;
           }
         }
@@ -78,7 +78,7 @@
           border:none;
           &:hover, &:active {
             background: color(dark-gray);
-            color:color(white);
+            color:white;
           }
         }
         .is-dropdown-submenu {
@@ -89,14 +89,14 @@
             color:color(ben-franklin-blue);
             &:hover, &:active {
               background: color(dark-gray);
-              color:color(white);
+              color:white;
             }
           }
         }
         .current-menu-item {
           > a{
             background: color(dark-gray);
-            color:color(white);
+            color:white;
           }
         }
       }
