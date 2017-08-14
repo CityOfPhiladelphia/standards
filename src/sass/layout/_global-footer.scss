@@ -8,7 +8,7 @@
 footer{
   &.site-footer {
     margin-top: $spacing-large;
-    background: color(white);
+    background: white;
 
     .department-logo{
       width: 300px;
@@ -36,7 +36,7 @@ footer{
             }
             a:link,
             a:visited {
-              color: color(white);
+              color: white;
             }
             a:hover,
             a:active {
@@ -59,7 +59,7 @@ footer{
         }
       }
       aside{
-        border-bottom: 1px solid color(white);
+        border-bottom: 1px solid white;
       }
 
       @media only screen and (min-width: 40em) {
@@ -149,7 +149,7 @@ footer{
           font-size:rem-calc(13);
           border-bottom: 0;
           padding: 0;
-          color: color(white);
+          color: white;
           text-transform: none;
         }
         section {
@@ -197,7 +197,7 @@ footer{
       &:hover, &:active {
         background: none;
         .button-label {
-          color: color(white);
+          color: white;
           background: color(dark-gray);
           transition: background-color 300ms ease-in-out;
         }
