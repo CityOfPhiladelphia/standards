@@ -94,6 +94,7 @@ module.exports = $(function(){
   $('#services-mega-menu').on('show.zf.dropdown', function() {
     $('#back-to-top').css('display', 'none');
     checkBrowserHeight();
+    Foundation.reInit('equalizer');
   });
 
 
