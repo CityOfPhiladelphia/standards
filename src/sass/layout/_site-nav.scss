@@ -13,18 +13,24 @@
   }
 
   li{
+    &.is-dropdown-submenu-parent a::after{
+      border-color: white transparent transparent;
+    }
     &.is-active > a {
       background: color(ben-franklin-blue);
-      color:color(white);
+      color:white;
     }
 
     a:hover {
       background: color(ben-franklin-blue);
-      color:color(white);
+      color:white;
     }
     a{
       color:color(dark-gray);
       font-weight:700;
+      ::after{
+        border-color: white transparent transparent;
+      }
     }
     ul li{
       text-align: left;
@@ -38,12 +44,12 @@
       color: color(dark-ben-franklin);
       &:hover{
         background:color(dark-ben-franklin);
-        color: color(white);
+        color: white;
       }
     }
     .current-menu-item > a{
       background: color(dark-ben-franklin);
-      color: color(white);
+      color: white;
     }
     .opens-right {
       > a::after{
@@ -62,6 +68,9 @@
     }
     .nested{
       padding-left:$spacing-medium;
+    }
+    .current-menu-item a::after{
+      border-color: white transparent transparent;
     }
   }
 }
