@@ -1,21 +1,6 @@
-.responsive {
+table {
   margin: 1em 0;
-  tr {
-    border-top: 1px solid color(ghost-gray);
-    border-bottom: 1px solid color(ghost-gray);
-  }
-  th {
-    display: none;
-  }
-  td {
-    display: block;
-  }
   th, td {
-    @include breakpoint(medium) {
-      display: table-cell;
-      .responsive-label {
-        display: none;
-      }
-    }
+    border: 2px solid white;
   }
 }
