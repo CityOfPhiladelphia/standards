@@ -28,13 +28,10 @@
 
   a:link, a:visited {
     font-weight: normal;
-    @include breakpoint(small only) {
+    @include breakpoint(medium up) {
       font-size: .85rem;
     }
-    @include breakpoint(medium up) {
-      font-size: .75rem;
 
-    }
   }
   //utility nav
   .utility-nav {
@@ -215,6 +212,14 @@
       }
     }
 
+  }
+  .top-bar-right .menu > li {
+    > a:link {
+      @media screen and (min-width: 750px) and (max-width:950px) {
+        font-size:.75rem;
+        padding: 2rem .5rem;
+      }
+    }
   }
 
   @include breakpoint( medium ) {
