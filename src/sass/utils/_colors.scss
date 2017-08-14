@@ -14,13 +14,10 @@ $colors: (
   light-red: #fed0d0,
   light-blue: #daedfe,
 
-  black: #000000,
   dark-gray: #444,
   medium-gray: #a1a1a1,
   sidewalk: #cfcfcf,
   ghost-gray: #f0f0f0,
-  white: #fff,
-
 );
 
 @function color($color-name) {
@@ -40,22 +37,22 @@ $colors: (
   }
 }
 
-//for some reason black isn't being parsed correctly with the above function, so we're doing it manually
+//these need to be added manually
 .black {
-  color: color(black);
+  color: black;
 }
 .bg-black{
-  background-color: color(black);
+  background-color: black;
 }
 .bdr-black{
-  border-color: color(black);
+  border-color: black;
 }
 .white {
-  color: color(white);
+  color: white;
 }
 .bg-white{
-  background-color: color(white);
+  background-color: white;
 }
 .bdr-white{
-  border-color:color(white);
+  border-color:white;
 }
