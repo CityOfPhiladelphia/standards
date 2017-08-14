@@ -21,7 +21,7 @@ nav#side-nav{ //sass-lint:disable-line no-ids
     > li.current_page_item {
       > a{
         background: color(dark-gray);
-        color: color(white);
+        color: white;
       }
     }
     ul {
@@ -36,7 +36,7 @@ nav#side-nav{ //sass-lint:disable-line no-ids
     }
     &.children{
       li {
-        border-bottom: 2px solid color(white);
+        border-bottom: 2px solid white;
         a{
           padding:.5rem;
           margin-left: 1rem;
@@ -60,7 +60,7 @@ nav#side-nav{ //sass-lint:disable-line no-ids
     }
     &.current_page_ancestor > a{
       background: color(ghost-gray);
-      color:color(black);
+      color:black;
     }
     &.current_page_item {
       > a:after{
@@ -80,7 +80,7 @@ nav#side-nav{ //sass-lint:disable-line no-ids
 
       > a{
         background: color(ghost-gray);
-        color:color(black);
+        color:black;
 
       }
     }
