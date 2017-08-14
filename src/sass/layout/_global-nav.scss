@@ -1,6 +1,9 @@
 #mobile-nav{ // sass-lint:disable-line no-ids
   padding-right:0;
   padding-left:0;
+  nav{
+    width:100%;
+  }
 }
 
 .global-nav {
@@ -14,7 +17,7 @@
   }
 
   .js-is-current {
-    color:color(white);
+    color:white;
     background: color(dark-ben-franklin);
     &:hover,
     &:active{
@@ -25,18 +28,19 @@
 
   a:link, a:visited {
     font-weight: normal;
-    @media screen and (min-width: 40em) {
+    @include breakpoint(small only) {
       font-size: .85rem;
     }
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    @include breakpoint(medium up) {
       font-size: .75rem;
+
     }
   }
   //utility nav
   .utility-nav {
     font-size: .85rem;
 
-    @media screen and (max-width: 39.9375em) {
+    @include breakpoint(small only) {
       height:10px;
     }
 
@@ -56,7 +60,7 @@
         a {
           display: inline-block;
           padding: $spacing-small;
-          color: color(white);
+          color: white;
           text-align: center;
 
           &:hover,
@@ -66,7 +70,7 @@
           }
           &.js-is-current{
             background:color(dark-gray);
-            color:color(white);
+            color:white;
             &:hover,
             &:active{
               color:color(dark-ben-franklin);
@@ -80,7 +84,7 @@
 
   .sticky{
     // sass-lint:disable-block no-important
-    background: color(white);
+    background: white;
     width: 100% !important;
     max-width: 100% !important;
     left:0 !important;
@@ -102,9 +106,9 @@
   }
 
   .title-bar {
-    color:color(dark-ben-franklin);
     position: absolute;
     top:0;
+
     .menu-icon {
       position: relative;
     }
@@ -138,15 +142,16 @@
   }
 
   .is-drilldown {
-    max-width: 100% !important; // sass-lint:disable-line no-important //TODO: check if this is necessary
+    max-width: 100% !important; // sass-lint:disable-line no-important
     background: color(ghost-gray);
 
     ul {
+      width: 100%;
 
       li {
         background: color(ghost-gray);
         list-style: none;
-        border-bottom: 1px solid color(white);
+        border-bottom: 1px solid white;
         &.bg-sidewalk{
           background: color(sidewalk);
         }
@@ -162,7 +167,7 @@
           &:hover,
           &:active {
             background: color(dark-ben-franklin);
-            color:color(white);
+            color:white;
           }
         }
       }
@@ -172,14 +177,14 @@
       a:link, a:hover, a:active{
         background:color(ghost-gray);
         cursor: default;
-        color: color(black);
+        color: black;
 
       }
     }
     .is-drilldown-submenu-parent > a {
       &:hover::after,
       &:active::after{
-        border-color:transparent transparent transparent color(white);
+        border-color:transparent transparent transparent white;
       }
     }
     .js-current-section{
@@ -193,7 +198,7 @@
   .js-drilldown-back{
     >a:hover::before,
     >a:active::before{
-      border-color: transparent color(white) transparent transparent;
+      border-color: transparent white transparent transparent;
     }
   }
 
@@ -204,7 +209,7 @@
 
     .top-bar{
       top: 0;
-      background-color: color(white);
+      background-color: white;
       &.no-js{
         display:none;
       }
@@ -222,7 +227,7 @@
     }
     .primary-menu {
       ul {
-        background-color:color(white);
+        background-color:white;
       }
       .menu>li {
         > a {
@@ -269,14 +274,14 @@
         background: color(dark-ben-franklin);
         //panel is open
         a{
-          color: color(white);
+          color: white;
           &:hover::after,
           &:active::after{
             border-color: transparent transparent color(dark-ben-franklin);
           }
           &.js-is-current{
             &::after{
-              border-color: transparent transparent color(white);
+              border-color: transparent transparent white;
             }
             //panel is open, and there is hover
             &:hover::after,
@@ -292,7 +297,7 @@
             width: 0;
             height: 0;
             border: inset 5px;
-            border-color: transparent transparent color(white);
+            border-color: transparent transparent white;
             border-bottom-style: solid;
             border-top-width: 0;
             height: 0;
@@ -309,10 +314,6 @@
       a {
         padding: $spacing-large 2.5rem $spacing-large 1.5rem !important; // sass-lint:disable-line no-important
         height: inherit;
-
-        @media screen and (min-width: 40em) and (max-width: 50em) {
-          padding: 1rem 2rem;
-        }
 
         &:hover::after,
         &:active::after{
@@ -337,10 +338,10 @@
           height: 10px;
         }
         &.js-is-current {
-          color:color(white);
+          color:white;
           background: color(dark-ben-franklin);
           &::after{
-            border-color: color(white) transparent transparent transparent;
+            border-color: white transparent transparent transparent;
           }
           &:hover::after,
           &:active::after{
@@ -364,9 +365,9 @@
 
     .inner-wrapper .columns {
       text-align: left;
-      border-left: 2px solid color(white);
-      border-right: 2px solid color(white);
-      border-bottom: 4px solid color(white);
+      border-left: 2px solid white;
+      border-right: 2px solid white;
+      border-bottom: 4px solid white;
       padding-left: 0;
       padding-right: 0;
 
@@ -377,7 +378,7 @@
         width: 100%;
 
         &:hover {
-          color:color(white);
+          color:white;
           background: color(dark-ben-franklin);
         }
         span{
@@ -389,9 +390,9 @@
       a {
         padding: 1.5rem 4rem;
 
-        color: color(white);
+        color: white;
         &:hover {
-          background:color(white);
+          background:white;
           color:color(dark-ben-franklin);
         }
       }
@@ -436,6 +437,10 @@
     position: relative;
     padding: 1rem 0;
     cursor: pointer;
+    font-weight: normal;
+    @include breakpoint(medium up) {
+      margin-top:.75rem;
+    }
 
     @include breakpoint(small only) {
       font-size: .7rem;
@@ -462,7 +467,6 @@ header {
   .logo img{
     display: block;
     max-width:170px;
-    max-height:45px;
     opacity: 1;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
@@ -472,9 +476,13 @@ header {
       opacity: .6;
     }
 
-    @include breakpoint(medium down) {
-      margin:$spacing-medium auto 0;
+    margin:.75rem 0 0 0;
+
+    @include breakpoint(small only) {
+      margin: .75rem auto 0 auto;
     }
+
+
   }
 }
 //Global search
