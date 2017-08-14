@@ -5,9 +5,6 @@
  *
 */
 // sass-lint:disable no-important, no-ids
-label {
-  margin:1rem 0;
-}
 
 .alternate{
   input[type="text"],
@@ -27,7 +24,7 @@ label {
   textarea,
   select{
     border: 2px solid color(ben-franklin-blue);
-    background-color: color(white);
+    background-color: white;
   }
 }
 
@@ -191,7 +188,7 @@ input[type=radio] {
   }
   .form-header{
     background: color(dark-ben-franklin);
-    color: color(white);
+    color: white;
     padding: 1rem;
   }
   .form-html{
@@ -388,7 +385,7 @@ input[type=radio] {
     text-align: center;
     line-height: 1;
     font-size: .9rem;
-    color: color(white);
+    color: white;
   }
   @media only screen and (min-width: 40em) {
     .form-line{
@@ -439,7 +436,7 @@ input[type=radio] {
     tr{
       td{
         background-color: color(ben-franklin-blue);
-        color: color(white);
+        color: white;
       }
     }
   }
@@ -461,7 +458,7 @@ input[type=radio] {
       }
       .today {
         background: color(ben-franklin-blue) !important;
-        color: color(white);
+        color: white;
         font-weight: bold;
       }
     }
@@ -497,7 +494,7 @@ input[type=radio] {
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc;
     font-weight: bold;
-    color: color(white);
+    color: white;
     font-size: 11px;
     padding: 3px;
     text-align: center;
@@ -520,17 +517,17 @@ input[type=radio] {
     content: '\f002';
     text-align: center;
     background: color(dark-ben-franklin);
-    color: color(white);
+    color: white;
     font-weight: normal;
   }
   .search-field,
   input[type="text"]:focus{
     min-height: 3.8rem;
     border:2px solid color(dark-ben-franklin);
-    background: color(white);
+    background: white;
   }
   input[type="text"]{
-    background: color(white);
+    background: white;
   }
   input[type="submit"] {
     z-index:10;
