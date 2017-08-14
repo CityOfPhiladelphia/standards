@@ -5,9 +5,9 @@
     @include secondary-font(400);
     display: inline-block;
     margin-left: -$spacing-medium;
-    background: color(black);
+    background: black;
     border-radius: $spacing-extra-large;
-    color:color(white);
+    color:white;
     padding: 0 $spacing-small;
     width:$spacing-large;
     height:$spacing-large;
@@ -18,7 +18,7 @@
     margin-top: -$spacing-large;
     padding-left: $spacing-large;
     padding-bottom: $spacing-large;
-    border-left:1px solid color(black);
+    border-left:1px solid black;
 
     &:last-of-type {
       border:none;
