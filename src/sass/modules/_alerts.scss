@@ -1,6 +1,6 @@
 #site-wide-alert{ //sass-lint:disable-line no-ids
   background: color(dark-ben-franklin);
-  color: color(white);
+  color: white;
   position: relative;
   .icon {
     color:color(electric-blue);
@@ -13,18 +13,18 @@
     font-weight: 400;
   }
   a:link, a:visited{
-    color: color(white);
+    color: white;
     text-decoration: underline;
   }
   button.close-button{
-    color:color(white);
+    color:white;
   }
 }
 
 .alert {
   &.alert-persistent {
     background:color(dark-gray);
-    color: color(white);
+    color: white;
     padding: $spacing-small $spacing-none;
 
     p {
@@ -34,7 +34,7 @@
     }
     a:link, a:visited{
       font-size: .85rem;
-      color:color(white);
+      color:white;
       text-transform: uppercase;
     }
     a:hover, a:active{
