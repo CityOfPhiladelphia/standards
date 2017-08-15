@@ -1,0 +1,95 @@
+//override our custom breakpoints
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 1050px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+);
+
+#application {
+  .site-header{
+    background: color(dark-ben-franklin);
+    color: white;
+    padding:$spacing-medium 0;
+    @include breakpoint(small only) {
+      @include center();
+    }
+
+    .logo{
+      display: inline-block;
+      margin:0;
+      vertical-align: middle;
+    }
+    .app-divide{
+      display: inline-block;
+      min-height:3rem;
+      vertical-align: middle;
+      @include breakpoint(medium up) {
+        border-left:1px solid white;
+        margin: 0 1rem;
+      }
+    }
+    .page-title-container{
+      vertical-align: middle;
+      display: inline-block;
+
+      a{
+        display: inline-block;
+      }
+
+      a:link, a:visited{
+        color:white;
+      }
+      a:hover, a:hover{
+        color: color(electric-blue);
+      }
+
+      h1{
+        font-size: rem-calc(18);
+        margin:0;
+        vertical-align: bottom;
+
+      }
+      h2{
+        font-size: rem-calc(14);
+        margin:0;
+      }
+    }
+    .app-buttons{
+      display: inline-block;
+      vertical-align: middle;
+      float:right;
+      @include breakpoint(small only) {
+        float:none;
+      }
+    }
+  }
+  .app-footer{
+    position: absolute;
+    background: color(dark-ben-franklin);
+    bottom:0;
+    width:100%;
+    @include center();
+    padding: $spacing-small 0;
+
+    a:link, a:visited{
+      color:white;
+    }
+    a:hover, a:hover{
+      color: color(electric-blue);
+    }
+    nav {
+      ul{
+        margin-bottom:0;
+        li{
+          border-left: 1px solid color(electric-blue);
+          padding: 0 1rem;
+          &:first-of-type{
+            border:none;
+          }
+        }
+      }
+    }
+  }
+}
