@@ -22,3 +22,12 @@
 @mixin transition( $property, $speed ){
   transition: $property $speed ease-in-out;
 }
+
+@mixin valign-cell(){
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@mixin center(){
+  text-align:center !important;
+}
