@@ -62,7 +62,6 @@
 
 @import 'util/util';
 
-
 // 1. Global
 // ---------
 
@@ -843,7 +842,7 @@ $topbar-unstack-breakpoint: medium;
 // 56. Xy Grid
 // -----------
 
-$xy-grid: false;
+$xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 24;
 $grid-margin-gutters: (
@@ -853,4 +852,4 @@ $grid-margin-gutters: (
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
-$block-grid-max: 4;
+$block-grid-max: 8;
