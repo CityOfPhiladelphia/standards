@@ -469,6 +469,7 @@
 
 header {
   .logo {
+    display: block;
     opacity: 1;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
@@ -477,9 +478,6 @@ header {
 
     &:hover{
       opacity: .6;
-    }
-    svg, img{
-      display: block;
     }
 
     margin:.75rem 0 0 0;
