@@ -468,17 +468,18 @@
 }
 
 header {
-  .logo svg,
-  .logo img{
-    display: block;
-    max-width:170px;
+  .logo {
     opacity: 1;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
     -webkit-transition: opacity .25s ease-in-out;
+    width:170px; //magic number for the size of the logo
 
     &:hover{
       opacity: .6;
+    }
+    svg, img{
+      display: block;
     }
 
     margin:.75rem 0 0 0;
@@ -486,7 +487,6 @@ header {
     @include breakpoint(small only) {
       margin: .75rem auto 0 auto;
     }
-
 
   }
 }
