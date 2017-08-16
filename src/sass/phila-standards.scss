@@ -1,3 +1,4 @@
+/* Digital Standards by the City of Philadelphia*/
 @import '../vendor/font-awesome/scss/font-awesome.scss';
 
 @import 'utils/variables';
@@ -8,6 +9,7 @@
 @import 'utils/mixins';
 @import 'utils/placeholders';
 
+@import 'util/util';
 @import 'settings';
 @import 'foundation';
 
@@ -70,6 +72,7 @@
 @import 'modules/back-to-top';
 @import 'modules/card';
 @import 'modules/google-translate';
+@import 'modules/jotform';
 @import 'modules/panel';
 @import 'modules/press-release';
 @import 'modules/pull-quotes';
