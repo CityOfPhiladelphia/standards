@@ -26,7 +26,7 @@
     "postcss-cli": "^2.6.0",
     "rimraf": "^2.6.1",
     "sass-lint": "^1.10.2",
-    "uglifyjs": "^2.4.10",
+    "uglify-js": "^3.0.27",
     "watchify": "^3.8.0"
   },
   "scripts": {
