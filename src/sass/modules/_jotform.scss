@@ -328,8 +328,6 @@
     margin-top: -100px;
     z-index: 100000;
   }
-}
-.calendar {
   table {
     background-color: #eee;
     border: 1px solid #aaa;
@@ -406,44 +404,5 @@
     padding: 3px;
     text-align: center;
     letter-spacing: .05px;
-  }
-}
-
-.search {
-  width: 100%;
-  position: relative;
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 3.8rem;
-    padding: .4rem;
-    width: 4rem;
-    font-size: 2rem;
-    font-family: 'FontAwesome';
-    content: '\f002';
-    text-align: center;
-    background: color(dark-ben-franklin);
-    color: white;
-    font-weight: normal;
-  }
-  .search-field,
-  input[type="text"]:focus{
-    min-height: 3.8rem;
-    border:2px solid color(dark-ben-franklin);
-    background: white;
-  }
-  input[type="text"]{
-    background: white;
-  }
-  input[type="submit"] {
-    z-index:10;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3.8rem;
-    height: 3.8rem;
-    opacity: 0;
-    cursor: pointer;
   }
 }

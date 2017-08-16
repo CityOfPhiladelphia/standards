@@ -6,87 +6,139 @@
 */
 // sass-lint:disable no-important, no-ids
 
-.alternate{
-  input[type="text"],
-  input[type="password"],
+.alternate {
+  input[type="color"],
   input[type="date"],
   input[type="datetime"],
   input[type="datetime-local"],
-  input[type="month"],
-  input[type="week"],
   input[type="email"],
+  input[type="month"],
   input[type="number"],
+  input[type="password"],
   input[type="search"],
   input[type="tel"],
+  input[type="text"],
   input[type="time"],
   input[type="url"],
-  input[type="color"],
-  textarea,
-  select{
+  input[type="week"],
+  select,
+  textarea {
     border: 2px solid color(ben-franklin-blue);
     background-color: white;
   }
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
+input[type="color"]:focus,
 input[type="date"]:focus,
 input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
 input[type="email"]:focus,
+input[type="month"]:focus,
 input[type="number"]:focus,
+input[type="password"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
+input[type="text"]:focus,
 input[type="time"]:focus,
 input[type="url"]:focus,
-input[type="color"]:focus,
+input[type="week"]:focus,
 textarea:focus {
   border: 2px solid color(electric-blue);
-  background-color:$white;
+  background-color: $white;
 }
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+/* FF 4-18 */
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+/* FF 19+ */
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+/* IE 10+ */
 //chome autocomplete hack to stop random ugly yellow background
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset !important;
 }
-
-
 @mixin form-controls( $unselected-icon, $selected-icon ) {
-  display:none;
+  display: none;
 
-  + label[for]{
+  + label[for] {
     color: color(dark-ben-franklin);
-    font-size:$global-font-size;
+    font-size: $global-font-size;
   }
 
   + label::before {
-    display:inline-block;
+    display: inline-block;
     content: $unselected-icon;
-    padding-right:10px;
+    padding-right: 10px;
     font-family: FontAwesome;
     color: color(dark-ben-franklin);
-
   }
 
   &:checked + label::before {
-    display:inline-block;
-    padding-right:10px;
+    display: inline-block;
+    padding-right: 10px;
     content: $selected-icon;
     font-family: FontAwesome;
   }
 }
-
 //Custom checkboxes
 input[type=checkbox] {
   @include form-controls( '\f096', '\f14a');
 }
 //Custom Radios
+
 input[type=radio] {
   @include form-controls( '\f1db', '\f111');
+}
+
+.search {
+  width: 100%;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3.8rem;
+    padding: 0.4rem;
+    width: 4rem;
+    font-size: 2rem;
+    font-family: 'FontAwesome';
+    content: '\f002';
+    text-align: center;
+    background: color(dark-ben-franklin);
+    color: white;
+    font-weight: normal;
+  }
+
+  .search-field,
+  input[type="text"]:focus {
+    min-height: 3.8rem;
+    border: 2px solid color(dark-ben-franklin);
+    background: white;
+  }
+
+  input[type="text"] {
+    background: white;
+  }
+
+  input[type="submit"] {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.8rem;
+    height: 3.8rem;
+    opacity: 0;
+    cursor: pointer;
+  }
 }
