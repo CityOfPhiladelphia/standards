@@ -60,7 +60,6 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-@import 'util/util';
 
 // 1. Global
 // ---------
@@ -653,8 +652,7 @@ $prototype-separator-margin-top: $global-margin;
 // --------------------
 
 $prototype-shadow-breakpoints: $global-prototype-breakpoints;
-$prototype-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
-                       0 2px 10px 0 rgba(0,0,0,.12);
+$prototype-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
 
 // 41. Prototype Sizing
 // --------------------
