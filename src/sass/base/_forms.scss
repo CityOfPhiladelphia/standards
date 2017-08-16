@@ -47,6 +47,12 @@ textarea:focus {
   background-color: $white;
 }
 
+select {
+  border:2px solid color(dark-ben-franklin);
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }
