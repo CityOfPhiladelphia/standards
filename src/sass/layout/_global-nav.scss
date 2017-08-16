@@ -470,6 +470,7 @@
 header {
   .logo {
     display: block;
+    margin:.75rem 0 0 0;
     opacity: 1;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
@@ -479,8 +480,6 @@ header {
     &:hover{
       opacity: .6;
     }
-
-    margin:.75rem 0 0 0;
 
     @include breakpoint(small only) {
       margin: .75rem auto 0 auto;
