@@ -193,10 +193,55 @@ html.is-reveal-open{
     opacity: .5;
   }
 }
+
 /*provides option to apply a hover-fade to items in which the link state should not change*/
 .hover-fade-keep-a{
   a:hover {
     color: color(ben-franklin-blue);
   }
   @extend %hover-fade;
+}
+.bdr-all{
+  border-width: 1px;
+  border-style: solid;
+}
+
+.bdr-bottom{
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.bdr-right{
+  border-right-width: 1px;
+  border-right-style: solid;
+}
+.bdr-left{
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+.bdr-top{
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.bdr-right-mu {
+  border-right: 0;
+  @media screen and (min-width: 40em) {
+    border-right-width: 1px;
+    border-right-style: solid;
+  }
+}
+
+.nbdr-right-mu {
+  @media screen and (min-width: 40em) {
+    border-right-width: 0px;
+    border-right-style: solid;
+  }
+}
+
+.bdr-bottom-sm {
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  @media screen and (min-width: 40em) {
+    border-bottom-width: 0px;
+  }
 }
