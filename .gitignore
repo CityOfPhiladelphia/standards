@@ -1,5 +1,6 @@
 # Folders
 node_modules/
+dev/
 dist/
 src/vendor/
 linters/
