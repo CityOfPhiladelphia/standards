@@ -12,7 +12,7 @@ $breakpoints: (
     width:100%;
     background: color(dark-ben-franklin);
     color: white;
-    padding:$spacing-medium 0;
+    padding: $spacing-medium 0;
     @include breakpoint(small only) {
       @include center();
     }
@@ -41,7 +41,7 @@ $breakpoints: (
       a:link, a:visited{
         color:white;
       }
-      a:hover, a:active{
+      a:hover, a:active, a:focus {
         color: color(electric-blue);
       }
 
@@ -69,9 +69,11 @@ $breakpoints: (
     @include center();
     background: color(electric-blue);
     padding: $spacing-small 0;
-    a:hover, a:active{
-      color: color(white);
+
+    a:hover, a:active, a:focus {
+      color: white;
     }
+
     ol, ul{
       margin:0;
       list-style: none;
@@ -100,7 +102,7 @@ $breakpoints: (
     a:link, a:visited{
       color:white;
     }
-    a:hover, a:hover{
+    a:hover, a:active, a:focus {
       color: color(electric-blue);
     }
     nav {
