@@ -6,3 +6,6 @@
 .yarnclean
 yarn.lock
 .yarn-integrity
+
+# Directories to ignore
+dev
