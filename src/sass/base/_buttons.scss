@@ -8,10 +8,12 @@
 button,
 .button {
   @include secondary-font(700);
-  background-color: transparent;
+  background-color: color(electric-blue);
   color: color(dark-gray);
   text-transform: uppercase;
-  height:40px;
+  padding:.75rem .5rem;
+  letter-spacing: .03rem;
+
 
   &:focus {
     background: none;
@@ -19,35 +21,36 @@ button,
   &.icon {
     display: inline-block;
     position: relative;
+    background: transparent;
+    min-height:40px;
+    padding: 0;
 
     .button-label{
       text-align: left;
     }
 
     .fa {
-      display: inline-block;
-      margin-right: .25rem;
       background: color(dark-gray);
       color:white;
       font-size: 1.7em;
-      max-height: 40px;
-      padding: .35em .5em .5em .35em;
+      border-right: 2px solid white;
       position: static;
-      vertical-align: sub;
-      width: 2.85714rem;
+      &::before{
+        width: 2.85714rem;
+        display: block;
+      }
     }
-
+    &:hover,
+    &:active{
+      background: none;
+    }
   }
 
   .button-label {
     background-color: color(electric-blue);
     min-height: 40px;
-    padding-top:$spacing-small;
-    padding-bottom:$spacing-small;
-    padding-right: 1.42857rem;
-    padding-left: 1.42857rem;
+    padding: 1rem;
     text-align: center;
-    letter-spacing: .03rem;
     width:100%;
   }
 
@@ -71,7 +74,7 @@ button, a {
       i.fa {
         color:white;
       }
-      background: none;
+      background: color(dark-gray);
       color: white;
       .button-label {
         color: white;
@@ -85,8 +88,12 @@ button, a {
     text-transform: none;
     background: color(electric-blue);
     color: white;
-    height: 20px;
+    height: 28px;
     border:none;
+    padding: 0;
+    .button-label{
+      padding:0 1rem;
+    }
     &::after{
       content: "";
       position: absolute;
