@@ -273,12 +273,12 @@ $button-font-family: inherit;
 $button-padding:0;
 $button-margin: 0;
 $button-fill: solid;
-$button-background: color(dark-ben-franklin);
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background: color(electric-blue);
+$button-background-hover: color(dark-gray);
 $button-color: white;
 $button-color-alt: black;
 $button-radius: $global-radius;
-$button-hollow-border-width: none;
+$button-hollow-border-width: 0;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
