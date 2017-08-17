@@ -1,14 +1,13 @@
 /* Digital Standards for Apps by the City of Philadelphia*/
 
 @import 'utils/variables';
-
 @import 'utils/colors';
 @import 'utils/helpers';
 @import 'utils/fonts';
 @import 'utils/mixins';
 @import 'utils/placeholders';
 
-@import 'util/util';
+@import '../vendor/foundation-sites/scss/util/util';
 @import 'settings';
 @import 'foundation';
 
@@ -40,8 +39,6 @@
 @import 'modules/service-updates';
 @import 'modules/tables';
 @import 'modules/modal';
-
 @import 'utils/tachyon-spacing';
-@import 'layout/print';
 
 @import 'app/base';
