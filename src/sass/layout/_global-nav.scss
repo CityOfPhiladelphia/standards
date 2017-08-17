@@ -108,13 +108,11 @@
 
     .menu-icon {
       position: relative;
-    }
-
-    .menu-icon {
       width: auto;
       height: auto;
       padding: .75rem;
       margin-left:0;
+      background: white;
       color: color(dark-ben-franklin);
 
       .fa {
@@ -443,6 +441,7 @@
     padding: 1rem 0;
     cursor: pointer;
     font-weight: normal;
+    background: none;
     @include breakpoint(medium up) {
       margin-top:.75rem;
     }
