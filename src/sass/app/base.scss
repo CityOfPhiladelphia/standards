@@ -20,6 +20,10 @@ $breakpoints: (
       display: inline-block;
       margin:0;
       vertical-align: middle;
+      img{
+        max-width: 170px;
+        height:auto;
+      }
     }
     .app-divide{
       display: inline-block;
