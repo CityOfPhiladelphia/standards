@@ -16,14 +16,18 @@ button,
 
 
   &:focus {
-    background: none;
+    color:white;
+    background: color(dark-gray);
   }
+
   &.icon {
     display: inline-block;
     position: relative;
     background: transparent;
     min-height:40px;
     padding: 0;
+
+
 
     .button-label{
       text-align: left;
@@ -62,32 +66,28 @@ button,
   }
 }
 
-button, a {
-  &.button {
-    &:link, &:visited {
-      color: color(dark-gray);
-      font-weight: 600;
-      font-size: 1rem;
+button, a.button {
+  color:color(dark-gray);
+
+  &:link{
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  &:hover, &:active, &:focus{
+    i.fa {
+      color:white;
     }
-    &:hover,
-    &:active{
-      i.fa {
-        color:white;
-      }
-      background: color(dark-gray);
+    background: color(dark-gray);
+    color: white;
+    .button-label {
       color: white;
-      .button-label {
-        color: white;
-        background: color(dark-gray);
-        transition: background-color 300ms ease-in-out;
-      }
+      background: color(dark-gray);
+      transition: background-color 300ms ease-in-out;
     }
   }
   &.see-all-right {
     position: relative;
     text-transform: none;
-    background: color(electric-blue);
-    color: white;
     height: 28px;
     border:none;
     padding: 0;
@@ -106,7 +106,7 @@ button, a {
 
       border-left: 15px solid color(electric-blue);
     }
-    &:hover::after{
+    &:hover::after, &:focus::after{
       border-left: 15px solid color(dark-gray);
       transition: border-color 300ms ease-in-out;
 
