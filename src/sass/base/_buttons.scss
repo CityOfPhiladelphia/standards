@@ -27,8 +27,6 @@ button,
     min-height:40px;
     padding: 0;
 
-
-
     .button-label{
       text-align: left;
     }
@@ -45,8 +43,12 @@ button,
       }
     }
     &:hover,
-    &:active{
+    &:active,
+    &:focus{
       background: none;
+      i.fa {
+        color:white;
+      }
     }
   }
 
@@ -73,10 +75,8 @@ button, a.button {
     font-weight: 600;
     font-size: 1rem;
   }
+
   &:hover, &:active, &:focus{
-    i.fa {
-      color:white;
-    }
     background: color(dark-gray);
     color: white;
     .button-label {
