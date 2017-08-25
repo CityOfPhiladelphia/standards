@@ -7,4 +7,15 @@ table {
     background: color(dark-gray);
     color:white;
   }
+  &.connect {
+    th{
+      background: transparent;
+      color:inherit;
+    }
+  }
+  &.service-update{
+    th{
+      color:inherit;
+    }
+  }
 }
