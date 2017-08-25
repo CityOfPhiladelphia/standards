@@ -1,4 +1,4 @@
-// sass-lint:disable no-important 
+// sass-lint:disable no-important
 @mixin pad-box($unit) {
   padding:rem-calc($unit);
 }
@@ -31,4 +31,8 @@
 
 @mixin center(){
   text-align:center !important;
+}
+@mixin inherit-colors(){
+  background: inherit;
+  color:inherit;
 }
