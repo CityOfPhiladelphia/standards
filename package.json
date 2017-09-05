@@ -1,6 +1,6 @@
 {
   "name": "phila-standards",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "City of Philadelphia Standards",
   "main": "dist/js/phila-standards.min.js",
   "style": "dist/css/phila-standards.min.css",
