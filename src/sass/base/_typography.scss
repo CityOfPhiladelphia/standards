@@ -155,8 +155,7 @@ ul ul{
     list-style-type: square;
   }
 }
-//TODO: consider a better name than .img-floats
-article.img-floats{
+article.list-table{
   ol, ul{
     display: table;
     margin-left: 2rem;
