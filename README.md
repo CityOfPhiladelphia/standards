@@ -8,7 +8,7 @@ This is an open-source collection of CSS, JavaScript, font and image files used 
   - Node.js
   - [Yarn](yarnpkg.com)
 - Clone this repo and cd into the directory
-- Run `yarn start` to watch directories.
+- Run `yarn watch` to watch directories.
 
 # Creating a release
 1. Run `yarn release`. This will clean the /dist directory and compile all necessary files.
