@@ -1635,9 +1635,9 @@ form-data@~2.1.1:
     combined-stream "^1.0.5"
     mime-types "^2.1.12"
 
-foundation-sites@^6.4.2:
-  version "6.4.2"
-  resolved "https://registry.yarnpkg.com/foundation-sites/-/foundation-sites-6.4.2.tgz#8aeb2a7e720a9a17e13359cdab8a05c1393a421f"
+foundation-sites@^6.4.3:
+  version "6.4.3"
+  resolved "https://registry.yarnpkg.com/foundation-sites/-/foundation-sites-6.4.3.tgz#ea89eb599badf6f03dd526c51f00bdb942a844f6"
   dependencies:
     jquery ">=3.0.0"
     what-input "^4.1.3"
