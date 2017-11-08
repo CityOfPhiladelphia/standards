@@ -13,7 +13,7 @@ $breakpoints: (
     background: color(dark-ben-franklin);
     color: white;
     padding: $spacing-medium 0;
-    @include breakpoint(small only) {
+    @include breakpoint(small only) {\
       @include center();
     }
     .logo{
@@ -58,6 +58,9 @@ $breakpoints: (
       h2{
         margin:0;
         font-size: rem-calc(14);
+      }
+      @include breakpoint(small only) {
+        margin-left: 1rem;
       }
     }
     .app-buttons{
