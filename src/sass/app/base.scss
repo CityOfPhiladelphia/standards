@@ -13,9 +13,6 @@ $breakpoints: (
     background: color(dark-ben-franklin);
     color: white;
     padding: $spacing-medium 0;
-    @include breakpoint(small only) {\
-      @include center();
-    }
     .logo{
       display: inline-block;
       margin:0;
