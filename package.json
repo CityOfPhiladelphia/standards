@@ -8,7 +8,6 @@
   "author": "City of Philadelphia",
   "license": "GPL-3.0",
   "dependencies": {
-    "font-awesome": "^4.7.0",
     "foundation-sites": "^6.4.3",
     "postscribe": "^2.0.8"
   },
@@ -33,9 +32,9 @@
   "scripts": {
     "test": "tests/*",
     "setup": "mkdirp dist/js dist/css dev/css",
-    "prebuild": "cp -R node_modules/foundation-sites src/vendor/foundation-sites && cp -R node_modules/font-awesome src/vendor/font-awesome",
-    "assets": "cp -R node_modules/font-awesome/fonts dist/ && cp -R src/img dist/",
-    "watch:css": "node-sass --include-path node_modules/font-awesome/scss --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true -w src/sass/phila-standards.scss dev/css/phila-standards.css",
+    "prebuild": "cp -R node_modules/foundation-sites src/vendor/foundation-sites",
+    "assets": "cp -R src/img dist/",
+    "watch:css": "node-sass --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true -w src/sass/phila-standards.scss dev/css/phila-standards.css",
     "watch:css:app": "node-sass --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true -w src/sass/phila-app.scss dev/css/phila-app.css",
     "build:css": "postcss --use autoprefixer -b 'last 2 versions' < dev/css/phila-standards.css -o dist/css/phila-standards.min.css && node-sass --output-style compressed --source-map true dev/css/phila-standards.css dist/css/phila-standards.min.css",
     "build:css:app": "postcss --use autoprefixer -b 'last 2 versions' < dev/css/phila-app.css -o dist/css/phila-app.min.css && node-sass --output-style compressed --source-map true dist/css/phila-app.min.css dist/css/phila-app.min.css",
