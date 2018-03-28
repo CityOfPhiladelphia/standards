@@ -142,13 +142,6 @@ ul.border-bottom-list li{
     text-transform: capitalize;
   }
 }
-.inline-block {
-  display: inline-block;
-}
-
-.list-style-none {
-  list-style: none;
-}
 
 @media screen and (min-width: 40em) {
   .valign-mu {
@@ -244,4 +237,25 @@ html.is-reveal-open{
   @media screen and (min-width: 40em) {
     border-bottom-width: 0px;
   }
+}
+
+/* Classes to mimic a single CSS rule */
+.float-none{
+  float:none;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.text-align-left{
+  text-align: left !important;
+}
+
+.list-style-none {
+  list-style: none;
 }
