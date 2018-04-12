@@ -1,4 +1,5 @@
 /* Digital Standards for Apps by the City of Philadelphia*/
+@import '../_vendor/foundation-sites/scss/util/util';
 
 @import 'utils/variables';
 @import 'utils/colors';
@@ -7,7 +8,6 @@
 @import 'utils/mixins';
 @import 'utils/placeholders';
 
-@import '../vendor/foundation-sites/scss/util/util';
 @import 'settings';
 @import 'foundation';
 

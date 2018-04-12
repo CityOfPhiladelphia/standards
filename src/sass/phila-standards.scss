@@ -1,5 +1,6 @@
 /* Digital Standards by the City of Philadelphia*/
-@import '../vendor/font-awesome/scss/font-awesome.scss';
+@import '../_vendor/font-awesome/scss/font-awesome.scss';
+@import '../_vendor/foundation-sites/scss/util/util';
 
 @import 'utils/variables';
 
@@ -9,7 +10,6 @@
 @import 'utils/mixins';
 @import 'utils/placeholders';
 
-@import '../vendor/foundation-sites/scss/util/util';
 @import 'settings';
 @import 'foundation';
 

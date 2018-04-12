@@ -33,11 +33,13 @@
   "scripts": {
     "test": "tests/*",
     "setup": "mkdirp dist/js dist/css dev/css src/vendor",
-    "prebuild": "mkdirp dist/js dist/css dev/css src/vendor cp -R node_modules/foundation-sites src/vendor/foundation-sites && cp -R node_modules/font-awesome src/vendor/font-awesome && touch dev/css/phila-standards.css dev/css/phila-app.css",
+    "prebuild": "mkdirp dist/js dist/css dev/css src/_vendor && cp -R node_modules/foundation-sites src/_vendor/foundation-sites && cp -R node_modules/font-awesome src/_vendor/font-awesome && touch dev/css/phila-standards.css dev/css/phila-app.css",
     "assets": "cp -R node_modules/font-awesome/fonts dist/ && cp -R src/img dist/",
     "watch:css": "node-sass --include-path node_modules/font-awesome/scss --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true -w src/sass/phila-standards.scss dev/css/phila-standards.css",
     "watch:css:app": "node-sass --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true -w src/sass/phila-app.scss dev/css/phila-app.css",
+
     "build:css": "node-sass --include-path node_modules/font-awesome/scss --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true src/sass/phila-standards.scss dev/css/phila-standards.css && postcss --use autoprefixer -b 'last 2 versions' < dev/css/phila-standards.css -o dist/css/phila-standards.min.css && node-sass --output-style compressed --source-map true dev/css/phila-standards.css dist/css/phila-standards.min.css",
+
     "build:css:app": "node-sass --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true src/sass/phila-app.scss dev/css/phila-app.css && postcss --use autoprefixer -b 'last 2 versions' < dev/css/phila-app.css -o dist/css/phila-app.min.css && node-sass --output-style compressed --source-map true dist/css/phila-app.min.css dist/css/phila-app.min.css",
     "watch:js": "watchify src/js/main.js -o dist/js/phila-standards.js -v",
     "build:js": "browserify src/js/main.js | uglifyjs -mc > dist/js/phila-standards.min.js",
