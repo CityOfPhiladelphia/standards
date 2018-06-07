@@ -8,6 +8,15 @@ $breakpoints: (
 );
 
 #application { //sass-lint:disable-line no-ids
+  /* If anchor class is present on the application div, we set the footer to fixed and adjust the margin of the continer so content won't overlap if scrolled all the way to the bottom of the page. */
+  &.anchor {
+    margin-bottom: 35px;
+    position: relative;
+    .app-footer{
+      position: fixed;
+      bottom: 0;
+    }
+  }
   .site-header{
     width:100%;
     background: color(dark-ben-franklin);
@@ -97,11 +106,6 @@ $breakpoints: (
     background: color(dark-ben-franklin);
     width:100%;
     padding: $spacing-small 0;
-
-    &.anchor {
-      position: fixed;
-      bottom:0;
-    }
 
     a:link, a:visited{
       color:white;
