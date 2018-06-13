@@ -176,11 +176,10 @@ module.exports = $(function(){
 
   //Generate services menu
   if ($("#services-list [data-services-menu]").length) {
-    var wpURL = 'https://beta.phila.gov/wp-json/wp/v2/services';
+    var wpURL = 'https://beta.phila.gov/wp-content/themes/phila.gov-theme/static/services-menu.json';
     $.ajax({
       method: "GET",
       url: wpURL,
-      data: 'parent=0&per_page=100&orderby=title'
     })
     .done( function( data ) {
       $.each(data, function(i, value) {

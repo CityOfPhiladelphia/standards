@@ -19,3 +19,9 @@ table {
     }
   }
 }
+
+body table.stack {
+  @include breakpoint(small down) {
+    @include table-stack;
+  }
+}
