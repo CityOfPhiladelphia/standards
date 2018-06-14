@@ -8,7 +8,10 @@
   thead, tbody, tfoot, tbody tr:nth-child(even){
     background:none;
   }
-
+  th, td {
+    border-bottom: 1rem solid white;
+    border-right: .5rem solid white;
+  }
   .service-update--critical {
     th{
       background: color(light-red);
