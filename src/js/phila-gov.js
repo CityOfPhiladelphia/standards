@@ -176,7 +176,7 @@ module.exports = $(function(){
 
   //Generate services menu
   if ($("#services-list [data-services-menu]").length) {
-    var wpURL = 'https://www.phila.gov/wp-json/wp/v2/services?parent=0&per_page=100&orderby=title';
+    var wpURL = 'https://www.phila.gov/wp-content/themes/phila.gov-theme/static/services-menu.json';
     $.ajax({
       method: "GET",
       url: wpURL,
