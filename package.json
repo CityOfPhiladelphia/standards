@@ -1,6 +1,6 @@
 {
   "name": "phila-standards",
-  "version": "0.12.0",
+  "version": "0.13.2",
   "description": "City of Philadelphia Standards",
   "main": "dist/js/phila-standards.min.js",
   "style": "dist/css/phila-standards.min.css",
@@ -31,7 +31,7 @@
   },
   "scripts": {
     "test": "tests/*",
-    "setup": "mkdirp dist/js dist/css dev/css src/vendor",
+    "setup": "mkdirp dist/js dist/css dev/css src/_vendor",
     "prebuild": "mkdirp dist/js dist/css dev/css src/_vendor && cp -R node_modules/foundation-sites src/_vendor/foundation-sites && cp -R node_modules/font-awesome src/_vendor/font-awesome && touch dev/css/phila-standards.css dev/css/phila-app.css",
     "assets": "cp -R node_modules/font-awesome/fonts dist/ && cp -R src/img dist/",
     "watch:css": "node-sass --include-path node_modules/font-awesome/scss --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true -w src/sass/phila-standards.scss dev/css/phila-standards.css",
