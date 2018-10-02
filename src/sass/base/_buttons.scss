@@ -31,12 +31,17 @@ button,
       text-align: left;
     }
 
-    .fa {
+    .fa,
+    .fas,
+    .far,
+    .fab,
+    .fal {
       background: color(dark-gray);
       color:white;
       font-size: 1.7em;
       border-right: 2px solid white;
       position: static;
+      padding: 0.75rem;
       &::before{
         width: 2.85714rem;
         display: block;

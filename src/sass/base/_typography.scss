@@ -129,8 +129,9 @@ a:hover, a:active, a:focus {
 
 // External Links
 .external::after {
-  font-family: "FontAwesome";
-  content: "\f08e";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 400;
+  content: "\f35d"; /* external-link-alt */
   font-size:rem-calc(12);
   padding:0 5px;
 }
