@@ -105,8 +105,6 @@ input[type=checkbox] {
 
 //Custom Radios
 input[type=radio] {
-  @include form-controls( "\f1db", "\f111");
-
   display: none;
 
   + label[for] {

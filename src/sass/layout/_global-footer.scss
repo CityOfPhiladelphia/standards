@@ -8,7 +8,7 @@
 footer{
   &.site-footer {
     margin-top: $spacing-extra-large;
-    background: white;  
+    background: white;
 
     .department-logo{
       width: 300px;
@@ -182,6 +182,9 @@ footer{
         .city-social {
           li {
             margin-bottom: .75rem;
+          }
+          .fa-stack {
+            vertical-align: inherit;
           }
         }
       }
