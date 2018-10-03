@@ -20,8 +20,25 @@ table {
   }
 }
 
-body table.stack {
-  @include breakpoint(small down) {
-    @include table-stack;
+
+table.responsive {
+  margin: 1em 0;
+  tr {
+    border-top: 1px solid color(ghost-gray);
+    border-bottom: 1px solid color(ghost-gray);
+  }
+  th {
+    display: none;
+  }
+  td {
+    display: block;
+  }
+  th, td {
+    @include breakpoint(medium up) {
+      display: table-cell;
+      .responsive-label {
+        display: none;
+      }
+    }
   }
 }
