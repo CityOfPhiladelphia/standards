@@ -43,8 +43,8 @@ button,
       position: static;
       padding: 0.75rem;
       &::before{
-        width: 2.85714rem;
         display: block;
+        width: 2.85714rem;
       }
     }
     &:hover,
