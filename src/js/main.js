@@ -6,3 +6,4 @@ var philaFeedbackToggle = require('./feedback-toggle');
 var philaBackToTop = require('./back-to-top');
 var philaGov = require('./phila-gov');
 var philaSVG = require('./svg-fallback');
+var philaTables = require('./responsive-tables')
