@@ -239,6 +239,15 @@ html.is-reveal-open{
   }
 }
 
+/* TODO Generate all width options 10 - 100*/
+.percent-90{
+  width: 90%;
+}
+
+.full-height{
+  height:100%;
+}
+
 /* Classes to mimic a single CSS rule */
 .float-none{
   float:none;
@@ -258,4 +267,19 @@ html.is-reveal-open{
 
 .list-style-none {
   list-style: none;
+}
+
+.all-caps{
+  text-transform: uppercase;
+}
+
+.group::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.margin-auto{
+  margin-left:auto;
+  margin-right:auto;
 }

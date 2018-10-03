@@ -771,8 +771,8 @@ $table-head-background: color(dark-gray);
 $table-foot-row-hover: darken(color(dark-gray), $table-hover-scale);
 $table-head-font-color: white;
 $table-foot-font-color: white;
-$show-header-for-stacked: false;
-$table-stack-breakpoint: medium;
+$show-header-for-stacked: true;
+$table-stack-breakpoint: small;
 
 // 51. Tabs
 // --------

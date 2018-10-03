@@ -74,7 +74,9 @@ input:focus:-ms-input-placeholder {
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset !important;
 }
-@mixin form-controls( $unselected-icon, $selected-icon ) {
+
+//Custom checkboxes
+input[type=checkbox] {
   display: none;
 
   + label[for] {
@@ -84,27 +86,49 @@ input:-webkit-autofill {
 
   + label::before {
     display: inline-block;
-    content: $unselected-icon;
+    content: "\f0c8"; /* square */
     padding-right: 10px;
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400; /* regular */
     color: color(dark-ben-franklin);
+
   }
 
   &:checked + label::before {
     display: inline-block;
     padding-right: 10px;
-    content: $selected-icon;
-    font-family: FontAwesome;
+    content: "\f14a"; /* check-square */
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400; /* regular */
   }
 }
-//Custom checkboxes
-input[type=checkbox] {
-  @include form-controls( '\f096', '\f14a');
-}
-//Custom Radios
 
+//Custom Radios
 input[type=radio] {
-  @include form-controls( '\f1db', '\f111');
+  display: none;
+
+  + label[for] {
+    color: color(dark-ben-franklin);
+    font-size: $global-font-size;
+  }
+
+  + label::before {
+    display: inline-block;
+    content: "\f111"; /* circle */
+    padding-right: 10px;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400; /* regular */
+    color: color(dark-ben-franklin);
+
+  }
+
+  &:checked + label::before {
+    display: inline-block;
+    padding-right: 10px;
+    content: "\f111"; /* circle */
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900; /* solid */
+  }
 }
 
 .search {
@@ -119,8 +143,9 @@ input[type=radio] {
     padding: 0.4rem;
     width: 4rem;
     font-size: 2rem;
-    font-family: 'FontAwesome';
-    content: '\f002';
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400; /* regular */
+    content: "\f002"; /* search */
     text-align: center;
     background: color(dark-ben-franklin);
     color: white;
