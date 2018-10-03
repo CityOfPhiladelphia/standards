@@ -1,4 +1,3 @@
 language: generic
-install: true
 script:
   - npm run test
