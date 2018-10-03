@@ -274,8 +274,8 @@ html.is-reveal-open{
 }
 
 .group::after {
-  content: "";
   display: table;
+  content: "";
   clear: both;
 }
 
