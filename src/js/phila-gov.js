@@ -9,7 +9,7 @@ module.exports = $(function(){
     e.preventDefault();
   });
 
-  var translate = setTimeout(function() { $('#google_translate_element a').prepend('<i class="fa fa-globe"></i>'); }, 1000);
+  var translate = setTimeout(function() { $('#google_translate_element a').prepend('<i class="fas fa-globe"></i>'); }, 1000);
 
   if ($('#mobile-nav-drilldown').length){
 
@@ -41,16 +41,16 @@ module.exports = $(function(){
   });
 
   $('#services-mega-menu').hover( function(){
-    $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
+    $( '.site-search i' ).addClass('fa-search').removeClass('fa-times');
 
   }, function(){
     $('body').removeClass('no-scroll');
-    $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
+    $( '.site-search i' ).addClass('fa-search').removeClass('fa-times');
 
   });
 
   function extendMenuToggle(){
-    $('.menu-icon i').toggleClass('fa-bars').toggleClass('fa-close');
+    $('.menu-icon i').toggleClass('fa-bars').toggleClass('fa-times');
     $('.menu-icon .title-bar-title').text( ( $('.menu-icon .title-bar-title' ).text() === 'Menu' ) ? 'Close' : 'Menu' );
     $('.global-nav .menu-icon').toggleClass('active');
     $('#page').toggleClass('hide');
