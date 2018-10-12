@@ -100,7 +100,7 @@ module.exports = $(function(){
 
   //click and hover handler for desktop service menu link
   $('.services-menu-link').on('click mouseover', function () {
-    $( '.site-search i' ).addClass('fa-search').removeClass('fa-close');
+    $( '.site-search i' ).addClass('fa-search').removeClass('fa-times');
   });
 
 
@@ -111,7 +111,7 @@ module.exports = $(function(){
       $('#page').removeClass('hide');
       $('footer').removeClass('hide');
     }
-    $( '.site-search i' ).removeClass('fa-close').addClass('fa-search');
+    $( '.site-search i' ).removeClass('fa-times').addClass('fa-search');
     $('.site-search span').text('Search');
   });
 
@@ -122,7 +122,7 @@ module.exports = $(function(){
     if ( (Foundation.MediaQuery.current === 'small') && $('.is-drilldown').is(':visible') ){
       $('.title-bar').foundation('toggleMenu');
     }
-    $( '.site-search i' ).addClass('fa-close').removeClass('fa-search');
+    $( '.site-search i' ).addClass('fa-times').removeClass('fa-search');
 
     $('.site-search span').text( ( $('.site-search span' ).text() === 'Search' ) ? 'Close' : 'Search' );
 
