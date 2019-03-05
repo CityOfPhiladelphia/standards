@@ -1,6 +1,6 @@
 {
   "name": "phila-standards",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "City of Philadelphia Standards",
   "main": "dist/js/phila-standards.min.js",
   "style": "dist/css/phila-standards.min.css",
@@ -8,11 +8,12 @@
   "author": "City of Philadelphia",
   "license": "GPL-3.0",
   "dependencies": {
-    "foundation-sites": "^6.4.3",
+    "foundation-sites": "6.4.3",
     "postscribe": "^2.0.8"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.22.0",
     "babelify": "^7.3.0",
     "browserify": "^13.3.0",
@@ -32,7 +33,7 @@
   "scripts": {
     "test": "tests/*",
     "setup": "mkdirp dist/js dist/css dev/css src/_vendor",
-    "prebuild": "mkdirp dist/js dist/css dev/css src/_vendor && cp -R node_modules/foundation-sites src/_vendor/foundation-sites && touch dev/css/phila-standards.css dev/css/phila-app.css",
+    "prebuild": "mkdirp dist/js dist/css dev/css src/_vendor && cp -R node_modules/foundation-sites src/_vendor && touch dev/css/phila-standards.css dev/css/phila-app.css",
     "assets": "cp -R src/img dist/",
     "watch:css": "node-sass --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true -w src/sass/phila-standards.scss dev/css/phila-standards.css",
     "watch:css:app": "node-sass --include-path node_modules/foundation-sites/scss --output-style expanded --source-map true -w src/sass/phila-app.scss dev/css/phila-app.css",
@@ -58,7 +59,14 @@
   },
   "browserify": {
     "transform": [
-      "browserify-shim"
+      [
+        "babelify",
+        {
+          "presets": [
+            "env"
+          ]
+        }
+      ]
     ]
   }
 }
