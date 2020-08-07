@@ -37,11 +37,19 @@
     background: transparentize( color(light-kelly-drive), 0.5);
   }
   .icon-label{
-    font-weight:normal;
-    text-transform: uppercase;
-    vertical-align: text-bottom;
+    font-weight: normal;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 130px;
+    line-height: 1.4rem;
+
     @include breakpoint(small only) {
       display: block;
     }
+  }
+  .service-icon{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 1rem 0 0;
   }
 }
