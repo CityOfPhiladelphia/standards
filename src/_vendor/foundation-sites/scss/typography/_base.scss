@@ -149,11 +149,11 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%) !default;
 
 /// Default text decoration for links.
 /// @type String
-$anchor-text-decoration: none !default;
+$anchor-text-decoration: underline !default;
 
 /// Default text decoration for links on hover.
 /// @type String
-$anchor-text-decoration-hover: none !default;
+$anchor-text-decoration-hover: underline !default;
 
 /// Maximum width of a divider.
 /// @type Number
