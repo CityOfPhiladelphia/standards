@@ -8,6 +8,7 @@ a{
     border-bottom: 5px solid color(ben-franklin-blue);
     font-size: rem-calc(13);
     background:color(ghost-gray);
+    text-decoration: none;
 
     h1, h2, h3, h4, h5, h6,
     .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -23,7 +24,6 @@ a{
       &:link,
       &:visited{
         color:color(ben-franklin-blue);
-        text-decoration: none;
       }
     }
 
@@ -48,6 +48,7 @@ a{
     //TODO: Remove sub-topic, leaving it in now for backwards compatibility
     &.sub-topic,
     &.card--overview{
+      text-decoration: none;
       background: rgba( color(light-ben-franklin), .3 );
       border-bottom: none;
 
@@ -80,6 +81,7 @@ a{
       color: $dark-gray;
       font-weight: normal;
       border-bottom: 0;
+      text-decoration: none;
 
       hr + .content-block{
         padding-top:0;

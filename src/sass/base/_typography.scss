@@ -112,6 +112,15 @@ a:hover, a:active, a:focus {
   color:color(dark-gray);
 }
 
+a.no-link, a.action-panel, a.valign, a.faux-card {
+  text-decoration: none;
+}
+
+.pagination-wrapper{
+  a{
+    text-decoration: none;
+  }
+}
 .small-text {
   display:block;
   color: color(dark-gray);
