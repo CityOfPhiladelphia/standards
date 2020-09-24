@@ -149,7 +149,7 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%) !default;
 
 /// Default text decoration for links.
 /// @type String
-$anchor-text-decoration: none !default;
+$anchor-text-decoration: underline !default;
 
 /// Default text decoration for links on hover.
 /// @type String
@@ -371,16 +371,16 @@ $abbr-underline: 1px dotted $black !default;
   a {
     line-height: inherit;
     color: $anchor-color;
-    text-decoration: $anchor-text-decoration;
+    text-decoration: underline;
 
     cursor: pointer;
 
     &:hover,
     &:focus {
       color: $anchor-color-hover;
-      @if $anchor-text-decoration-hover != $anchor-text-decoration {
-        text-decoration: $anchor-text-decoration-hover;
-      }
+      // @if $anchor-text-decoration-hover != $anchor-text-decoration {
+      //   text-decoration: $anchor-text-decoration-hover;
+      // }
     }
 
     img {

@@ -116,17 +116,12 @@ a.no-link, a.action-panel, a.valign, a.faux-card, a.hover-fade, a.mrs.mbs.equal,
   text-decoration: none;
 }
 
-.valign, .valign-cell, .hover-fade, .guide-name{
+.valign, .valign-cell, .hover-fade, .guide-name, .paginate-links, .pagination-wrapper{
   a {
     text-decoration: none;
   }
 }
 
-.pagination-wrapper{
-  a{
-    text-decoration: none;
-  }
-}
 .small-text {
   display:block;
   color: color(dark-gray);
