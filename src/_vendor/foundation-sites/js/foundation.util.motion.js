@@ -1,7 +1,7 @@
 'use strict';
 
 import $ from 'jquery';
-import { transitionend } from './foundation.util.core';
+import { transitionend } from './foundation.core.utils';
 
 /**
  * Motion module.
@@ -77,6 +77,9 @@ function animate(isIn, element, animation, cb) {
 
   // Start the animation
   requestAnimationFrame(() => {
+    // will trigger the browser to synchronously calculate the style and layout
+    // also called reflow or layout thrashing
+    // see https://gist.github.com/paulirish/5d52fb081b3570c81e3a
     element[0].offsetWidth;
     element
       .css('transition', '')
@@ -100,5 +103,5 @@ function animate(isIn, element, animation, cb) {
   }
 }
 
-export {Move, Motion};
+export { Move, Motion };
 
