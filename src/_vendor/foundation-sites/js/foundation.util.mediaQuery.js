@@ -17,9 +17,10 @@ const defaultQueries = {
 
 
 // matchMedia() polyfill - Test a CSS media type/query in JS.
-// Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license
-let matchMedia = window.matchMedia || (function() {
-  'use strict';
+// Authors & copyright © 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. MIT license
+/* eslint-disable */
+window.matchMedia || (window.matchMedia = (function () {
+  "use strict";
 
   // For browsers that support matchMedium api such as IE 9 and webkit
   var styleMedia = (window.styleMedia || window.media);
@@ -33,14 +34,18 @@ let matchMedia = window.matchMedia || (function() {
     style.type  = 'text/css';
     style.id    = 'matchmediajs-test';
 
-    script && script.parentNode && script.parentNode.insertBefore(style, script);
+    if (!script) {
+      document.head.appendChild(style);
+    } else {
+      script.parentNode.insertBefore(style, script);
+    }
 
     // 'style.currentStyle' is used by IE <= 8 and 'window.getComputedStyle' for all other browsers
     info = ('getComputedStyle' in window) && window.getComputedStyle(style, null) || style.currentStyle;
 
     styleMedia = {
-      matchMedium(media) {
-        var text = `@media ${media}{ #matchmediajs-test { width: 1px; } }`;
+      matchMedium: function (media) {
+        var text = '@media ' + media + '{ #matchmediajs-test { width: 1px; } }';
 
         // 'style.styleSheet' is used by IE <= 8 and 'style.textContent' for all other browsers
         if (style.styleSheet) {
@@ -52,7 +57,7 @@ let matchMedia = window.matchMedia || (function() {
         // Test if media query is true or false
         return info.width === '1px';
       }
-    }
+    };
   }
 
   return function(media) {
@@ -60,8 +65,9 @@ let matchMedia = window.matchMedia || (function() {
       matches: styleMedia.matchMedium(media || 'all'),
       media: media || 'all'
     };
-  }
-})();
+  };
+})());
+/* eslint-enable */
 
 var MediaQuery = {
   queries: [],
@@ -74,6 +80,14 @@ var MediaQuery = {
    * @private
    */
   _init() {
+
+    // make sure the initialization is only done once when calling _init() several times
+    if (this.isInitialized === true) {
+      return;
+    } else {
+      this.isInitialized = true;
+    }
+
     var self = this;
     var $meta = $('meta.foundation-mq');
     if(!$meta.length){
@@ -84,6 +98,8 @@ var MediaQuery = {
     var namedQueries;
 
     namedQueries = parseStyleToObject(extractedStyles);
+
+    self.queries = []; // reset
 
     for (var key in namedQueries) {
       if(namedQueries.hasOwnProperty(key)) {
@@ -100,6 +116,17 @@ var MediaQuery = {
   },
 
   /**
+   * Reinitializes the media query helper.
+   * Useful if your CSS breakpoint configuration has just been loaded or has changed since the initialization.
+   * @function
+   * @private
+   */
+  _reInit() {
+    this.isInitialized = false;
+    this._init();
+  },
+
+  /**
    * Checks if the screen is at least as wide as a breakpoint.
    * @function
    * @param {String} size - Name of the breakpoint to check.
@@ -109,10 +136,41 @@ var MediaQuery = {
     var query = this.get(size);
 
     if (query) {
-      return matchMedia(query).matches;
+      return window.matchMedia(query).matches;
     }
 
     return false;
+  },
+
+  /**
+   * Checks if the screen is within the given breakpoint.
+   * If smaller than the breakpoint of larger than its upper limit it returns false.
+   * @function
+   * @param {String} size - Name of the breakpoint to check.
+   * @returns {Boolean} `true` if the breakpoint matches, `false` otherwise.
+   */
+  only(size) {
+    return size === this._getCurrentSize();
+  },
+
+  /**
+   * Checks if the screen is within a breakpoint or smaller.
+   * @function
+   * @param {String} size - Name of the breakpoint to check.
+   * @returns {Boolean} `true` if the breakpoint matches, `false` if it's larger.
+   */
+  upTo(size) {
+    const nextSize = this.next(size);
+
+    // If the next breakpoint does not match, the screen is smaller than
+    // the upper limit of this breakpoint.
+    if (nextSize) {
+      return !this.atLeast(nextSize);
+    }
+
+    // If there is no next breakpoint, the "size" breakpoint does not have
+    // an upper limit and the screen will always be within it or smaller.
+    return true;
   },
 
   /**
@@ -122,13 +180,26 @@ var MediaQuery = {
    * @returns {Boolean} `true` if the breakpoint matches, `false` if it does not.
    */
   is(size) {
-    size = size.trim().split(' ');
-    if(size.length > 1 && size[1] === 'only') {
-      if(size[0] === this._getCurrentSize()) return true;
-    } else {
-      return this.atLeast(size[0]);
+    const parts = size.trim().split(' ').filter(p => !!p.length);
+    const [bpSize, bpModifier = ''] = parts;
+
+    // Only the breakpont
+    if (bpModifier === 'only') {
+      return this.only(bpSize);
     }
-    return false;
+    // At least the breakpoint (included)
+    if (!bpModifier || bpModifier === 'up') {
+      return this.atLeast(bpSize);
+    }
+    // Up to the breakpoint (included)
+    if (bpModifier === 'down') {
+      return this.upTo(bpSize);
+    }
+
+    throw new Error(`
+      Invalid breakpoint passed to MediaQuery.is().
+      Expected a breakpoint name formatted like "<size> <modifier>", got "${size}".
+    `);
   },
 
   /**
@@ -149,6 +220,43 @@ var MediaQuery = {
   },
 
   /**
+   * Get the breakpoint following the given breakpoint.
+   * @function
+   * @param {String} size - Name of the breakpoint.
+   * @returns {String|null} - The name of the following breakpoint, or `null` if the passed breakpoint was the last one.
+   */
+  next(size) {
+    const queryIndex = this.queries.findIndex((q) => this._getQueryName(q) === size);
+    if (queryIndex === -1) {
+      throw new Error(`
+        Unknown breakpoint "${size}" passed to MediaQuery.next().
+        Ensure it is present in your Sass "$breakpoints" setting.
+      `);
+    }
+
+    const nextQuery = this.queries[queryIndex + 1];
+    return nextQuery ? nextQuery.name : null;
+  },
+
+  /**
+   * Returns the name of the breakpoint related to the given value.
+   * @function
+   * @private
+   * @param {String|Object} value - Breakpoint name or query object.
+   * @returns {String} Name of the breakpoint.
+   */
+  _getQueryName(value) {
+    if (typeof value === 'string')
+      return value;
+    if (typeof value === 'object')
+      return value.name;
+    throw new TypeError(`
+      Invalid value passed to MediaQuery._getQueryName().
+      Expected a breakpoint name (String) or a breakpoint query (Object), got "${value}" (${typeof value})
+    `);
+  },
+
+  /**
    * Gets the current breakpoint name by testing every breakpoint and returning the last one to match (the biggest one).
    * @function
    * @private
@@ -160,16 +268,12 @@ var MediaQuery = {
     for (var i = 0; i < this.queries.length; i++) {
       var query = this.queries[i];
 
-      if (matchMedia(query.value).matches) {
+      if (window.matchMedia(query.value).matches) {
         matched = query;
       }
     }
 
-    if (typeof matched === 'object') {
-      return matched.name;
-    } else {
-      return matched;
-    }
+    return matched && this._getQueryName(matched);
   },
 
   /**
@@ -216,7 +320,7 @@ function parseStyleToObject(str) {
 
     // missing `=` should be `null`:
     // http://w3.org/TR/2012/WD-url-20120524/#collect-url-parameters
-    val = val === undefined ? null : decodeURIComponent(val);
+    val = typeof val === 'undefined' ? null : decodeURIComponent(val);
 
     if (!ret.hasOwnProperty(key)) {
       ret[key] = val;
